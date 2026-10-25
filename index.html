@@ -651,7 +651,7 @@ body.v10 .h10-panel{background:#0D0E10}
 .h10 h1{font:800 clamp(40px,5.2vw,74px)/1 var(--display);letter-spacing:-.045em;margin:24px 0 22px;color:#fff;max-width:12ch}
 .h10 h1 em{font-style:normal;color:#E39A6F}
 .h10-roles{display:flex;align-items:center;gap:12px;font-size:17px;color:#A9ADB4;height:30px}
-.h10-roles .roll{display:inline-block;height:30px;overflow:hidden;color:#fff;font-weight:600}
+.h10-roles .lbl{line-height:30px}.h10-roles .roll{display:inline-block;height:30px;overflow:hidden;color:#fff;font-weight:600}
 .h10-roles .roll span{display:block;height:30px;line-height:30px;animation:roll 7.5s cubic-bezier(.7,0,.3,1) infinite}
 @keyframes roll{0%,26%{transform:translateY(0)}33%,59%{transform:translateY(-100%)}66%,92%{transform:translateY(-200%)}100%{transform:translateY(-300%)}}
 .h10-lede{font-size:18px;line-height:1.65;color:#B8BBC1;max-width:46ch;margin:18px 0 0}
@@ -770,6 +770,58 @@ body.v10 #writing .uxc{border-radius:24px}
 .rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.h10-roles .roll span,.logos10-track>div,.wave,.h10-photo img{animation:none}}
+
+/* skills band v10 */
+.sb10{margin:72px 16px 0;border-radius:24px;background:#111214;padding:28px 0;overflow:hidden;position:relative}
+.sb10-track{-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
+.sb10-track{display:flex;width:100%;overflow:hidden}
+.sb10-track>div{display:flex;flex:none;align-items:center;gap:28px;padding-right:28px;animation:mq10 55s linear infinite}
+@keyframes mq10{to{transform:translateX(-100%)}}
+.sb10:hover .sb10-track>div{animation-play-state:paused}
+.sb10 span{font:700 clamp(22px,2.6vw,34px)/1 var(--display);letter-spacing:-.03em;white-space:nowrap}
+.sb10 .sk0{color:#F2F2EF}
+.sb10 .sk1{color:transparent;-webkit-text-stroke:1.2px rgba(255,255,255,.55)}
+.sb10 i{font-style:normal;color:#E39A6F;font-size:18px}
+@media (max-width:600px){.sb10{padding:18px 0;margin:56px 8px 0;border-radius:20px}.sb10-track>div{gap:18px;padding-right:18px}}
+@media (prefers-reduced-motion:reduce){.sb10-track>div{animation:none}}
+
+/* responsive fixes v10.1 */
+.h10-photo::after{display:none}
+.h10-photo img{-webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.25) 14%,#000 50%),linear-gradient(0deg,transparent,#000 30%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.25) 14%,#000 50%),linear-gradient(0deg,transparent,#000 30%);mask-composite:intersect}
+.ct10-mail a{overflow-wrap:anywhere}
+@media (max-width:900px){
+  .h10-photo img{-webkit-mask-image:linear-gradient(0deg,transparent 0%,#000 45%);mask-image:linear-gradient(0deg,transparent 0%,#000 45%);-webkit-mask-composite:source-over;mask-composite:add}
+  .h10-photo{height:min(460px,62vh)}
+  .proc10 div:last-child{grid-column:1/-1}
+  .h10-badge{right:24px;max-width:calc(100% - 48px)}
+}
+@media (max-width:600px){
+  .h10-copy{padding:0 20px 100px}
+  .h10-cta{gap:10px}.h10-cta .b10{flex:1 1 140px;justify-content:center;padding:0 16px}
+  .h10-badge{left:20px;right:20px;bottom:20px;font-size:12.5px;justify-content:center}
+  .logos10{flex-direction:column;align-items:flex-start;gap:16px;margin-top:44px}.logos10-track{width:100%}
+  .logos10-track b{font-size:19px}
+  .ct10{border-radius:28px;padding:32px 22px}
+  .ct10-mail a{font-size:clamp(18px,5.6vw,28px)}
+  .ct10-mail .b10{width:100%;justify-content:center}
+  .c10-body{padding:22px}.c10-meta{gap:10px}
+  .s10-head h2{font-size:clamp(30px,9vw,40px)}
+  .f10{flex-direction:column}
+}
+
+/* v11: time zones in hero */
+.h10-tz{margin-top:30px;display:flex;flex-direction:column;gap:10px}
+.h10-tz .tz-label{font:500 11.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#8D9198}
+.h10-tz .tz-row{display:flex;flex-wrap:wrap;gap:8px}
+.h10-tz .tz-chip{display:flex;flex-direction:column;gap:4px;min-width:86px;padding:10px 13px;border-radius:14px;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1);border:0}
+.h10-tz .tz-chip b{font:700 15px/1 var(--body);color:#fff}
+.h10-tz .tz-chip span{font-size:11.5px;line-height:1.2;color:#9A9EA5}
+.h10-tz .tz-chip.home{background:rgba(227,154,111,.16);box-shadow:inset 0 0 0 1px rgba(227,154,111,.55)}
+.h10-tz .tz-chip.home span{color:#E9B391}
+@media (max-width:1100px) and (min-width:901px){.h10-photo{width:52%}.h10 h1{font-size:54px}.h10-copy{padding:56px 44px;max-width:600px}.c10{grid-template-columns:1.2fr 1fr}}
+@media (max-width:1100px) and (min-width:601px){.ux{grid-template-columns:1fr 1fr!important}}
+@media (max-width:900px){.h10-tz .tz-chip{min-width:0;flex:1 1 calc(33.3% - 8px)}}
+@media (max-width:600px){.w10{width:calc(100% - 32px)}.h10-panel{margin:0 8px;border-radius:24px}.h10 h1{font-size:40px}.h10-tz .tz-chip{flex:1 1 calc(33.3% - 8px);padding:9px 10px}.ux{grid-template-columns:1fr!important}.proc10{grid-template-columns:1fr}.proc10 div{border-left:0}.c10-meta{grid-template-columns:1fr}.pc{padding:24px}}
 </style>
 </head>
 <body class="v10">
@@ -783,7 +835,7 @@ body.v10 #writing .uxc{border-radius:24px}
       <li><a href="#experience">Experience</a></li>
       <li><a href="#writing">UX writing</a></li>
     </ul>
-    <div class="n10-cta"><a class="b10 ghost sm" href="assets/Joyeta-Banerjee-Resume.pdf" target="_blank" rel="noopener">Resume</a><a class="b10 sm" href="#contact">Let's talk</a></div>
+    <div class="n10-cta"><a class="b10 sm" href="#contact">Let's talk</a></div>
   </div>
 </nav>
 
@@ -795,10 +847,10 @@ body.v10 #writing .uxc{border-radius:24px}
       <h1>Product Designer who designs what teams can <em>ship.</em></h1>
       <div class="h10-roles" aria-label="UI/UX Designer, Product Manager, UX Writer"><span class="lbl">I work as</span><span class="roll"><span>UI/UX Designer</span><span>Product Manager</span><span>UX Writer</span><span>UI/UX Designer</span></span></div>
       <p class="h10-lede">User flows, design systems and interfaces for apps, e-commerce and SaaS — with a PM's eye for scope and handoff.</p>
-      <div class="h10-cta"><a class="b10 accent" href="#work">View my work <span>↓</span></a><a class="b10 glass" href="assets/Joyeta-Banerjee-Resume.pdf" target="_blank" rel="noopener">Download resume</a></div>
-      <div class="h10-tools"><span>Figma</span><span>FigJam</span><span>Jira</span><span>Notion</span><span>HTML & CSS</span></div>
+      <div class="h10-cta"><a class="b10 accent" href="#work">View my work <span>↓</span></a><a class="b10 glass" href="#contact">Contact me</a></div>
+      <div class="h10-tz"><span class="tz-label">Overlapping hours with your team</span><div class="tz-row" id="tzRow"></div></div>
     </div>
-    <div class="h10-badge"><i></i><span><b>Available</b> for remote roles · <span id="khulnaTime">Khulna</span></span></div>
+    <div class="h10-badge"><i></i><span><b>Available</b> for remote roles worldwide</span></div>
   </div>
   <div class="w10 h10-stats">
     <div><b>5</b><span>case studies in Figma</span></div>
@@ -837,7 +889,7 @@ body.v10 #writing .uxc{border-radius:24px}
       <div><b>05</b><h4>Ship</h4><span>Handoff, design QA</span></div>
     </div>
   </div>
-  <div class="mq-band"><div class="mq r1" aria-hidden="true"><div class="mq-track"><span>Figma</span><span>Design systems</span><span>Variables</span><span>Auto layout</span><span>Prototyping</span><span>User research</span><span>Journey mapping</span><span>User stories</span><span>FigJam</span><span>Wireframes</span><span>Jira</span><span>Agile / Scrum</span><span>PRD writing</span><span>RICE · MoSCoW</span><span>HTML & CSS</span><span>Shopify</span><span>UX writing</span><span>Design QA</span><span>Stakeholder management</span><span>Git</span><span>Figma</span><span>Design systems</span><span>Variables</span><span>Auto layout</span><span>Prototyping</span><span>User research</span><span>Journey mapping</span><span>User stories</span><span>FigJam</span><span>Wireframes</span><span>Jira</span><span>Agile / Scrum</span><span>PRD writing</span><span>RICE · MoSCoW</span><span>HTML & CSS</span><span>Shopify</span><span>UX writing</span><span>Design QA</span><span>Stakeholder management</span><span>Git</span></div></div></div>
+  <div class="sb10" aria-label="Skills: Figma, Design systems, User research, Prototyping, Journey mapping, Wireframes, Variables & auto layout, UX writing, PRD writing, RICE · MoSCoW, Agile / Scrum, Design QA, HTML & CSS, Jira"><div class="sb10-track" aria-hidden="true"><div><span class="sk0">Figma</span><i>✦</i><span class="sk1">Design systems</span><i>✦</i><span class="sk0">User research</span><i>✦</i><span class="sk1">Prototyping</span><i>✦</i><span class="sk0">Journey mapping</span><i>✦</i><span class="sk1">Wireframes</span><i>✦</i><span class="sk0">Variables & auto layout</span><i>✦</i><span class="sk1">UX writing</span><i>✦</i><span class="sk0">PRD writing</span><i>✦</i><span class="sk1">RICE · MoSCoW</span><i>✦</i><span class="sk0">Agile / Scrum</span><i>✦</i><span class="sk1">Design QA</span><i>✦</i><span class="sk0">HTML & CSS</span><i>✦</i><span class="sk1">Jira</span><i>✦</i></div><div><span class="sk0">Figma</span><i>✦</i><span class="sk1">Design systems</span><i>✦</i><span class="sk0">User research</span><i>✦</i><span class="sk1">Prototyping</span><i>✦</i><span class="sk0">Journey mapping</span><i>✦</i><span class="sk1">Wireframes</span><i>✦</i><span class="sk0">Variables & auto layout</span><i>✦</i><span class="sk1">UX writing</span><i>✦</i><span class="sk0">PRD writing</span><i>✦</i><span class="sk1">RICE · MoSCoW</span><i>✦</i><span class="sk0">Agile / Scrum</span><i>✦</i><span class="sk1">Design QA</span><i>✦</i><span class="sk0">HTML & CSS</span><i>✦</i><span class="sk1">Jira</span><i>✦</i></div></div></div>
 </section>
 
 <section class="s10" id="experience">
@@ -903,7 +955,7 @@ body.v10 #writing .uxc{border-radius:24px}
       <div class="ct10-links">
         <a href="https://www.linkedin.com/in/joyeecse03" target="_blank" rel="noopener"><small>LinkedIn</small><b>joyeecse03 ↗</b></a>
         <a href="https://wa.me/8801963791602" target="_blank" rel="noopener"><small>WhatsApp</small><b>+880 1963 791602 ↗</b></a>
-        <a href="assets/Joyeta-Banerjee-Resume.pdf" target="_blank" rel="noopener"><small>Resume</small><b>Download PDF ↓</b></a>
+        <div><small>Open to</small><b>Remote · worldwide</b></div>
         <div><small>Based in</small><b>Khulna, Bangladesh</b></div>
       </div>
     </div>
