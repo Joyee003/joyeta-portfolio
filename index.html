@@ -578,6 +578,36 @@ html,body{overflow-x:clip}
 .pv-phone .pv-screen.scrolly{overflow-y:auto;scrollbar-width:none}
 .pv-phone .pv-screen.scrolly::-webkit-scrollbar{display:none}
 .pv-scrolltip{font-size:13px;color:#E3B48E;margin:-6px 0 12px}
+
+/* v9 hero */
+.hero{position:relative;isolation:isolate}
+.hero-bg{position:absolute;inset:-68px 0 0;z-index:-1;pointer-events:none;
+  background:radial-gradient(60% 55% at 82% 30%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 70%),
+  radial-gradient(40% 40% at 8% 10%,color-mix(in srgb,var(--accent) 7%,transparent),transparent 70%);}
+.hero-bg::after{content:"";position:absolute;inset:0;background-image:radial-gradient(color-mix(in srgb,var(--ink) 14%,transparent) 1px,transparent 1px);background-size:22px 22px;
+  -webkit-mask-image:radial-gradient(55% 60% at 80% 35%,#000,transparent 75%);mask-image:radial-gradient(55% 60% at 80% 35%,#000,transparent 75%)}
+.portrait::before{display:none}
+.portrait{max-width:430px;justify-self:end;width:100%;padding:0 0 0 26px}
+.ph-frame{position:relative;border-radius:240px 240px 32px 32px;overflow:hidden;background:var(--accent-soft);
+  box-shadow:0 50px 90px -50px rgba(60,30,10,.55),0 0 0 10px var(--surface),0 0 0 11px var(--line)}
+.ph-frame img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border-radius:0;box-shadow:none;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.portrait:hover .ph-frame img{transform:scale(1.03)}
+.fcard{position:absolute;display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:12px 16px;
+  box-shadow:0 24px 40px -26px rgba(30,20,10,.5);animation:floaty 6s ease-in-out infinite}
+.fcard b{display:block;font-weight:700;font-size:14.5px;color:var(--ink);line-height:1.2}
+.fcard small{display:block;font-size:12px;color:var(--muted);line-height:1.35}
+.fcard .ic{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;background:var(--accent);color:#fff;font-size:15px}
+.fc1{left:-40px;top:66%;animation-delay:-3s}
+.fc2{right:-26px;top:16%;flex-direction:column;align-items:flex-start;gap:2px;padding:14px 18px}
+.fc2 b{font-size:30px;color:var(--accent);letter-spacing:-.02em}
+.portrait figcaption{left:50%;bottom:-20px;transform:translateX(-50%);white-space:nowrap;background:var(--ink);color:var(--paper);box-shadow:0 18px 30px -18px rgba(0,0,0,.6)}
+.portrait figcaption b{color:var(--paper)}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.hero h1{letter-spacing:-.025em}
+.hero h1 em{background:linear-gradient(90deg,var(--accent),color-mix(in srgb,var(--accent) 60%,#E3A06F));-webkit-background-clip:text;background-clip:text;color:transparent}
+@media (max-width:980px){.portrait{justify-self:center;max-width:360px;margin-top:10px}.fc1{left:-14px}.fc2{right:-10px}}
+@media (max-width:520px){.portrait{max-width:300px;padding:0}.fc1{left:-12px;top:68%;padding:9px 12px}.fc1 small{display:none}.fc2{right:-12px;padding:10px 14px}.fc2 b{font-size:24px}.portrait figcaption{font-size:12.5px}}
+@media (prefers-reduced-motion:reduce){.fcard{animation:none}}
 </style>
 </head>
 <body>
@@ -596,7 +626,7 @@ html,body{overflow-x:clip}
   </div>
 </nav>
 
-<header class="hero" id="top">
+<header class="hero" id="top"><div class="hero-bg" aria-hidden="true"></div>
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-copy">
@@ -608,7 +638,12 @@ html,body{overflow-x:clip}
           <a class="btn ghost" href="#contact">Contact me</a>
         </div>
       </div>
-      <figure class="portrait"><img src="assets/joyeta-portrait.jpg" alt="Joyeta Banerjee, Product Designer" fetchpriority="high"><figcaption><i></i><span><b>Joyeta Banerjee</b> · Available for remote work</span></figcaption></figure>
+      <figure class="portrait">
+        <div class="ph-frame"><img src="assets/joyeta-portrait-pro.jpg" alt="Joyeta Banerjee, Product Designer" fetchpriority="high"></div>
+        <div class="fcard fc1"><span class="ic">✦</span><div><b>Product Designer</b><small>UI/UX · Product thinking</small></div></div>
+        <div class="fcard fc2"><b>5</b><small>case studies<br>in Figma</small></div>
+        <figcaption><i></i><span><b>Joyeta Banerjee</b> · Available for remote work</span></figcaption>
+      </figure>
     </div>
     <div class="stats">
       <div><b>5</b><span>Figma case studies</span></div>
