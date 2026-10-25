@@ -915,6 +915,17 @@ body.v10 .h10-panel{background:transparent;color:var(--ink);min-height:0;margin:
 .h10-avw img{border-width:5px}
 .h10-avw::after{right:14px;bottom:14px;width:20px;height:20px}
 @media (max-width:600px){.h10-me{flex-direction:column;align-items:flex-start;gap:22px}.h10-avw{width:150px;height:150px}}
+
+/* v17: profile frame — tilted backing card */
+.pf{position:relative;flex:none;width:168px;height:168px;margin:6px 10px 14px 6px}
+.pf img{position:relative;z-index:1;display:block;width:100%;height:100%;object-fit:cover;border-radius:32px;border:4px solid var(--surface);box-shadow:0 22px 40px -24px rgba(60,25,10,.55);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.pf-back{position:absolute;inset:0;border-radius:34px;background:var(--accent);transform:rotate(-8deg) translate(-6px,6px);opacity:.9;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.pf-back::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--accent-soft);transform:rotate(14deg) translate(12px,-4px);z-index:-1}
+.pf:hover img{transform:rotate(2deg)}
+.pf:hover .pf-back{transform:rotate(-12deg) translate(-8px,8px)}
+.pf figcaption{position:absolute;z-index:2;left:50%;bottom:-14px;transform:translateX(-50%);display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:12px;font-weight:600;white-space:nowrap;box-shadow:0 10px 20px -10px rgba(0,0,0,.5)}
+.pf figcaption i{width:7px;height:7px;border-radius:50%;background:#3DD68C}
+@media (max-width:600px){.pf{width:140px;height:140px}.pf img{border-radius:26px}.pf-back{border-radius:28px}}
 </style>
 </head>
 <body class="v10">
@@ -944,7 +955,7 @@ body.v10 .h10-panel{background:transparent;color:var(--ink);min-height:0;margin:
       <span class="h10-hi"><span class="wave">👋</span><span>Hi, I'm <b>Joyeta</b></span><span class="h10-open"><i></i>Open to remote</span></span>
       <h1>Product Designer who designs what teams can <em>ship.</em></h1>
       <div class="h10-roles" aria-label="UI/UX Designer, Product Manager, UX Writer"><span class="lbl">I work as</span><span class="roll"><span>UI/UX Designer</span><span>Product Manager</span><span>UX Writer</span><span>UI/UX Designer</span></span></div>
-      <div class="h10-me"><span class="h10-avw"><img src="assets/joyeta-avatar.jpg" alt="Joyeta Banerjee"></span><p class="h10-lede">User flows, design systems and interfaces for apps, e-commerce and SaaS — with a PM's eye for scope and handoff.</p></div>
+      <div class="h10-me"><figure class="pf"><span class="pf-back" aria-hidden="true"></span><img src="assets/joyeta-avatar.jpg" alt="Joyeta Banerjee"><figcaption><i></i>Available</figcaption></figure><p class="h10-lede">User flows, design systems and interfaces for apps, e-commerce and SaaS — with a PM's eye for scope and handoff.</p></div>
       <div class="h10-cta"><a class="b10 accent" href="#work">View my work <span>↓</span></a><a class="b10 glass" href="#contact">Contact me</a></div>
       <div class="h10-tz"><span class="tz-label">Overlapping hours with your team</span><div class="tz-row" id="tzRow"></div></div>
     </div>
