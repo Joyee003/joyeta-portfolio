@@ -54,20 +54,21 @@ const protoUrl = (id, embed) => {
 };
 const ALL = [...P.filter(p => p.id === 'moodbrew'), ...P.filter(p => p.id !== 'moodbrew'), MORE];
 const img = (p, i) => `assets/${p.id}-${String(i).padStart(2, '0')}.jpg`;
-const card = (p) => `
-<a class="proj" href="#case-${p.id}">
-  <span class="pimg"><img src="assets/${p.id}-thumb.jpg" alt="${p.alts[0]}" loading="lazy"></span>
-  <span class="pbody">
-    <span class="tag">${p.n} · ${p.tags[0]}</span>
+const card = (p, k) => `
+<a class="c10 rv" href="#case-${p.id}">
+  <span class="c10-img"><img src="assets/${p.id}-thumb.jpg" alt="${p.alts[0]}" loading="lazy"></span>
+  <span class="c10-body">
+    <span class="c10-n"><b>Case ${String(k + 1).padStart(2, '0')} / ${String(ALL.length).padStart(2, '0')}</b><span>${p.tags[0]}</span></span>
     <h3>${p.title}</h3>
     <p>${p.line}</p>
-    <span class="meta">${p.tags.map(t => `<span class="pill">${t}</span>`).join('')}</span>
-    <span class="go"><span>Case study + live prototype</span><span>→</span></span>
+    <span class="c10-meta"><span><small>Role</small><span>${p.facts[0][1]}</span></span><span><small>Platform</small><span>${p.facts[1][1]}</span></span></span>
+    <span class="c10-tags">${p.tags.slice(1, 4).map(t => `<span>${t}</span>`).join('')}</span>
+    <span class="c10-go"><span>Case study + live prototype</span><i>→</i></span>
   </span>
 </a>`;
-document.getElementById('projects').innerHTML = ALL.map(card).join('');
-document.getElementById('more').innerHTML = '';
-document.getElementById('figmaTop').href = FIGMA;
+document.getElementById('projects').innerHTML = ALL.map((p, k) => card(p, k)).join('');
+const _more = document.getElementById('more'); if (_more) _more.innerHTML = '';
+const _ft = document.getElementById('figmaTop'); if (_ft) _ft.href = FIGMA;
 
 
 function protoSection(p) {
@@ -114,10 +115,10 @@ function route() {
 }
 window.addEventListener('hashchange', route); route();
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && document.querySelector('.case.open')) location.hash = 'work'; });
-document.querySelectorAll('[data-copy]').forEach(b => b.addEventListener('click', async () => {
+document.querySelectorAll('[data-copy]').forEach(b => { const _t = b.textContent; b.addEventListener('click', async () => {
   try { await navigator.clipboard.writeText(b.dataset.copy); b.textContent = 'Copied ✓'; } catch (e) { b.textContent = 'Select & copy'; }
-  setTimeout(() => b.textContent = 'Copy', 2000);
-}));
+  setTimeout(() => b.textContent = _t, 2000);
+}); });
 
 /* time zone chips */
 (function () {
@@ -174,4 +175,10 @@ document.addEventListener('keydown', e => {
   const id = pr.dataset.proto; if (e.key === 'ArrowLeft') protoBack(id); else protoGo(id, (PSTATE[id] || 0) + 1);
 });
 
-addEventListener('scroll',()=>document.querySelector('nav.top').classList.toggle('scrolled',scrollY>10),{passive:true});
+addEventListener('scroll',()=>{const n=document.querySelector('nav.top, nav.n10'); if(n) n.classList.toggle('scrolled',scrollY>10)},{passive:true});
+/* v10: Khulna clock + reveal on scroll */
+(function(){const t=document.getElementById('khulnaTime'); if(t){const d=()=>{try{t.textContent=new Date().toLocaleTimeString('en-US',{timeZone:'Asia/Dhaka',hour:'numeric',minute:'2-digit'})+' in Khulna'}catch(e){}};d();setInterval(d,30000)}
+document.querySelectorAll('.pc,.proc10,.xp10 li,.uxc,.ct10,.h10-stats').forEach(el=>el.classList.add('rv'));
+if(!('IntersectionObserver' in window)){document.querySelectorAll('.rv').forEach(e=>e.classList.add('in'));return}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));})();
