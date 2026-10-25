@@ -855,6 +855,18 @@ body.v10 .h10-panel{background:transparent;color:var(--ink);min-height:0;margin:
 
 .h10-roles{align-items:stretch}.h10-roles .lbl{display:inline-block;height:30px;line-height:30px}
 @media (max-width:900px){.h10-copy{max-width:none;margin-top:14px!important}.h10 h1{max-width:16ch}.h10-tz .tz-chip{flex:0 1 auto;min-width:96px}}
+
+/* v13: natural portrait */
+.h10-panel::before{display:none}
+.h10-photo{margin:0;padding:12px 12px 0;background:var(--surface);border-radius:22px;box-shadow:0 1px 0 var(--line),0 24px 50px -36px rgba(20,15,10,.35);border:1px solid var(--line)}
+.h10-photo::before{display:none!important}
+.h10-photo img{border-radius:14px!important;box-shadow:none!important;aspect-ratio:4/5;animation:none}
+.h10-photo figcaption{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 4px 16px;font-size:13.5px;color:var(--muted)}
+.h10-photo figcaption b{display:block;font-size:15px;color:var(--ink);font-weight:600;margin-bottom:2px}
+.h10-photo .av{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--ink);white-space:nowrap}
+.h10-photo .av i{width:8px;height:8px;border-radius:50%;background:#2FB574}
+@media (max-width:900px){.h10-photo img{aspect-ratio:1/1}}
+@media (max-width:600px){.h10-photo{width:100%;padding:10px 10px 0}.h10-photo figcaption{font-size:12.5px}}
 </style>
 </head>
 <body class="v10">
@@ -874,7 +886,7 @@ body.v10 .h10-panel{background:transparent;color:var(--ink);min-height:0;margin:
 
 <header class="h10" id="top">
   <div class="h10-panel">
-    <div class="h10-photo"><img src="assets/joyeta-headshot.jpg" alt="Joyeta Banerjee" fetchpriority="high"><div class="h10-badge"><i></i><span><b>Available</b> for remote roles worldwide</span></div></div>
+    <figure class="h10-photo"><img src="assets/joyeta-headshot.jpg" alt="Joyeta Banerjee" fetchpriority="high"><figcaption><span><b>Joyeta Banerjee</b>Product Designer · Khulna</span><span class="av"><i></i>Open to remote work</span></figcaption></figure>
     <div class="h10-copy">
       <span class="h10-hi"><span class="wave">👋</span> Hi, I'm Joyeta Banerjee</span>
       <h1>Product Designer who designs what teams can <em>ship.</em></h1>
