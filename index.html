@@ -822,6 +822,39 @@ body.v10 #writing .uxc{border-radius:24px}
 @media (max-width:1100px) and (min-width:601px){.ux{grid-template-columns:1fr 1fr!important}}
 @media (max-width:900px){.h10-tz .tz-chip{min-width:0;flex:1 1 calc(33.3% - 8px)}}
 @media (max-width:600px){.w10{width:calc(100% - 32px)}.h10-panel{margin:0 8px;border-radius:24px}.h10 h1{font-size:40px}.h10-tz .tz-chip{flex:1 1 calc(33.3% - 8px);padding:9px 10px}.ux{grid-template-columns:1fr!important}.proc10{grid-template-columns:1fr}.proc10 div{border-left:0}.c10-meta{grid-template-columns:1fr}.pc{padding:24px}}
+
+/* v12: light hero, photo as card */
+body.v10 .h10-panel{background:transparent;color:var(--ink);min-height:0;margin:0 auto;width:min(1240px,100% - 48px);border-radius:0;overflow:visible;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;padding:40px 0 10px}
+.h10-panel::before{content:"";position:absolute;inset:-40px -10vw 0;z-index:-2;background:radial-gradient(45% 60% at 78% 45%,color-mix(in srgb,var(--accent) 14%,transparent),transparent 70%)}
+.h10-photo{position:relative;inset:auto;width:100%;height:auto;order:2;z-index:0;justify-self:end;max-width:480px}
+.h10-photo img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:60% 25%;border-radius:32px;-webkit-mask-image:none!important;mask-image:none!important;box-shadow:0 50px 90px -50px rgba(20,15,10,.6)}
+.h10-photo::after{display:none}
+.h10-photo::before{content:"";position:absolute;inset:18px -18px -18px 18px;border-radius:36px;border:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);z-index:-1}
+.h10-copy{padding:0;max-width:640px;margin:0}
+.h10-hi{background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);color:var(--muted)}
+.h10 h1{color:var(--ink)}
+.h10 h1 em{color:var(--accent)}
+.h10-roles{color:var(--muted)}.h10-roles .roll{color:var(--ink)}
+.h10-lede{color:var(--muted)}
+.b10.glass{background:var(--surface);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line);backdrop-filter:none}
+.b10.glass:hover{background:var(--paper)}
+.h10-tz .tz-label{color:var(--muted)}
+.h10-tz .tz-chip{background:var(--surface);box-shadow:inset 0 0 0 1px var(--line)}
+.h10-tz .tz-chip b{color:var(--ink)}
+.h10-tz .tz-chip span{color:var(--muted)}
+.h10-tz .tz-chip.home{background:var(--accent-soft);box-shadow:inset 0 0 0 1px var(--accent)}
+.h10-tz .tz-chip.home span{color:var(--accent)}
+.h10-photo .h10-badge{position:absolute;left:50%;right:auto;bottom:-22px;transform:translateX(-50%);white-space:nowrap;background:var(--ink);color:var(--paper);box-shadow:0 18px 30px -16px rgba(0,0,0,.5);backdrop-filter:none}.h10-photo .h10-badge b{color:var(--paper)}
+@media (max-width:900px){
+  body.v10 .h10-panel{grid-template-columns:1fr;gap:36px;padding-top:16px}
+  .h10-photo{order:-1;justify-self:center;max-width:420px;height:auto}
+  .h10-photo img{aspect-ratio:1/1}
+  .h10-copy{padding:0;margin-top:0}
+}
+@media (max-width:600px){body.v10 .h10-panel{width:calc(100% - 32px)}.h10-photo{max-width:none;width:calc(100% - 18px);justify-self:start}.h10-photo img{border-radius:24px}.h10-photo::before{border-radius:28px;inset:12px -12px -12px 12px}}
+
+.h10-roles{align-items:stretch}.h10-roles .lbl{display:inline-block;height:30px;line-height:30px}
+@media (max-width:900px){.h10-copy{max-width:none;margin-top:14px!important}.h10 h1{max-width:16ch}.h10-tz .tz-chip{flex:0 1 auto;min-width:96px}}
 </style>
 </head>
 <body class="v10">
@@ -841,7 +874,7 @@ body.v10 #writing .uxc{border-radius:24px}
 
 <header class="h10" id="top">
   <div class="h10-panel">
-    <div class="h10-photo" aria-hidden="true"><img src="assets/joyeta-headshot.jpg" alt="" fetchpriority="high"></div>
+    <div class="h10-photo"><img src="assets/joyeta-headshot.jpg" alt="Joyeta Banerjee" fetchpriority="high"><div class="h10-badge"><i></i><span><b>Available</b> for remote roles worldwide</span></div></div>
     <div class="h10-copy">
       <span class="h10-hi"><span class="wave">👋</span> Hi, I'm Joyeta Banerjee</span>
       <h1>Product Designer who designs what teams can <em>ship.</em></h1>
@@ -850,7 +883,6 @@ body.v10 #writing .uxc{border-radius:24px}
       <div class="h10-cta"><a class="b10 accent" href="#work">View my work <span>↓</span></a><a class="b10 glass" href="#contact">Contact me</a></div>
       <div class="h10-tz"><span class="tz-label">Overlapping hours with your team</span><div class="tz-row" id="tzRow"></div></div>
     </div>
-    <div class="h10-badge"><i></i><span><b>Available</b> for remote roles worldwide</span></div>
   </div>
   <div class="w10 h10-stats">
     <div><b>5</b><span>case studies in Figma</span></div>
