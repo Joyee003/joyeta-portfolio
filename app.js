@@ -103,7 +103,7 @@ layer.innerHTML = ALL.map((p, k) => {
       <div class="case-actions"><a class="btn" href="#proto-${p.id}" data-jump="proto-${p.id}">▶ Try the prototype</a><a class="btn ghost" href="${protoUrl(p.id)}" target="_blank" rel="noopener">Open in Figma prototype ↗</a><a class="btn ghost" href="#contact">Talk about this project</a></div>
     </div>
     ${protoSection(p)}
-    <div class="case-figs">${p.caps.map((c, i) => `<figure><figcaption>${String(i + 1).padStart(2, '0')} · ${c}</figcaption><img src="${img(p, i)}" alt="${p.alts[i]}" loading="lazy"></figure>`).join('')}</div>
+    <div class="case-figs">${p.caps.map((c, i) => `<figure><figcaption>${String(i + 1).padStart(2, '0')} · ${c}</figcaption><div class="fig-frame"><img src="${img(p, i)}" alt="${p.alts[i]}" loading="lazy"></div></figure>`).join('')}</div>
     <div class="next-case"><span class="tag">Next</span><a href="#case-${nxt.id}">${nxt.title} →</a></div>
   </div></article>`;
 }).join('');

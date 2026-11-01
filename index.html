@@ -926,6 +926,16 @@ body.v10 .h10-panel{background:transparent;color:var(--ink);min-height:0;margin:
 .pf figcaption{position:absolute;z-index:2;left:50%;bottom:-14px;transform:translateX(-50%);display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:12px;font-weight:600;white-space:nowrap;box-shadow:0 10px 20px -10px rgba(0,0,0,.5)}
 .pf figcaption i{width:7px;height:7px;border-radius:50%;background:#3DD68C}
 @media (max-width:600px){.pf{width:140px;height:140px}.pf img{border-radius:26px}.pf-back{border-radius:28px}}
+
+/* v19: case figure frames — keep board content off the rounded edge */
+.case-figs figure{gap:14px}
+.case-figs .fig-frame{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:clamp(10px,2vw,22px);box-shadow:0 20px 40px -34px rgba(20,15,40,.35)}
+.case-figs .fig-frame img{border:0!important;border-radius:12px!important;box-shadow:none!important;width:100%;height:auto;display:block}
+@media (max-width:600px){.case-figs .fig-frame{border-radius:18px;padding:8px}.case-figs .fig-frame img{border-radius:8px!important}.case-figs{gap:40px}}
+
+.case-bar .wrap{gap:12px}.case-bar .crumbs{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.case-bar .btn{flex:none;white-space:nowrap}
+@media (max-width:600px){.case-bar .btn{padding:8px 14px;font-size:13px}}
 </style>
 </head>
 <body class="v10">
