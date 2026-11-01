@@ -182,3 +182,5 @@ document.querySelectorAll('.pc,.proc10,.xp10 li,.uxc,.ct10,.h10-stats').forEach(
 if(!('IntersectionObserver' in window)){document.querySelectorAll('.rv').forEach(e=>e.classList.add('in'));return}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
 document.querySelectorAll('.rv').forEach(e=>io.observe(e));})();
+
+(function(){const t=document.getElementById('khulnaNow');if(!t)return;const d=()=>{try{t.textContent=new Date().toLocaleTimeString('en-US',{timeZone:'Asia/Dhaka',hour:'numeric',minute:'2-digit'})+' in Khulna'}catch(e){}};d();setInterval(d,30000)})();

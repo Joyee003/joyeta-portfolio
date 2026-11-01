@@ -6,7 +6,7 @@
 <title>Joyeta Banerjee · Product Designer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* Layout idea: a designer's spec sheet. Clean canvas, redline annotations in magenta
    mark where design meets delivery. Flows drawn in blue. */
@@ -927,6 +927,89 @@ body.v10 .h10-panel{background:transparent;color:var(--ink);min-height:0;margin:
 .pf figcaption i{width:7px;height:7px;border-radius:50%;background:#3DD68C}
 @media (max-width:600px){.pf{width:140px;height:140px}.pf img{border-radius:26px}.pf-back{border-radius:28px}}
 
+/* v18: design systems library */
+.ds-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px}
+.ds-card{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;border-radius:24px;overflow:hidden;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.ds-card:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1px var(--line),0 30px 50px -36px rgba(20,15,40,.45)}
+.ds-card:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.ds-card>.dm{border-radius:0;height:230px}
+.ds-body{display:flex;flex-direction:column;gap:8px;padding:20px 22px 22px}
+.ds-n{display:flex;justify-content:space-between;font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.ds-n b{color:var(--accent);font-weight:500}
+.ds-name{font:800 26px/1.1 var(--display);letter-spacing:-.03em;color:var(--ink)}
+.ds-line{font-size:14.5px;line-height:1.55;color:var(--muted)}
+.ds-sw{display:flex;gap:5px;margin-top:6px}
+.ds-sw i{width:22px;height:22px;border-radius:7px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+.ds-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.ds-meta span{font-size:12px;padding:4px 10px;border-radius:999px;background:var(--paper);box-shadow:inset 0 0 0 1px var(--line);color:var(--muted)}
+.ds-note{margin-top:20px;display:flex;gap:16px;align-items:flex-start;padding:20px 24px;border-radius:20px;background:var(--accent-soft);color:var(--ink);font-size:15px;line-height:1.6}
+.ds-note b{flex:none;font-weight:700}
+/* mini UI specimen */
+.dm{position:relative;display:flex;background:var(--c);font-family:var(--ff);color:var(--t1);overflow:hidden;border-radius:16px;text-align:left}
+.dm.framed{background:var(--fr);padding:10px 10px 10px 0}
+.dm-rail{width:42px;display:flex;flex-direction:column;align-items:center;gap:10px;padding-top:10px}
+.dm-rail i{width:22px;height:22px;border-radius:7px;background:linear-gradient(160deg,#F7F66A,#34C46D)}
+.dm-rail i:nth-child(2){background:linear-gradient(160deg,#7EEBD0,#08A8A6)}
+.dm-rail i:nth-child(3){background:linear-gradient(160deg,#8ED8FF,#5C7BFF)}
+.dm-sheet{flex:1;display:flex;border-radius:14px;overflow:hidden;background:var(--c)}
+.dm-side{width:30%;min-width:96px;background:var(--sd);border-right:1px solid var(--bd);padding:14px 10px;display:flex;flex-direction:column;gap:6px;font-size:11px}
+.dm-side b{font-weight:600;font-size:12px;margin:0 0 6px;display:flex;align-items:center;gap:6px}
+.dm-mark{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:6px}
+.dm-nav{padding:6px 8px;border-radius:8px;color:var(--t2)}
+.dm-nav.on{background:var(--hv);color:var(--t1);font-weight:600;border-radius:8px}
+.dm-main{flex:1;padding:14px 14px;display:flex;flex-direction:column;gap:9px;background:var(--sf);min-width:0}
+.dm-h{font:600 14px/1.2 var(--fd);letter-spacing:-.01em}
+.dm-h.serif{font-weight:500;font-size:16px}
+.dm-media{height:34px;border-radius:12px;display:flex;align-items:center;padding:0 10px}
+.dm-media span{background:#fff;border-radius:999px;padding:4px 10px;font-size:10px;color:#333}
+.dm-card{border:1px solid var(--bd);border-radius:var(--r);padding:9px 11px;box-shadow:var(--sh);display:grid;grid-template-columns:1fr auto;align-items:end;gap:0 6px;background:var(--sf)}
+.dm-card small{grid-column:1/-1;font-size:9.5px;color:var(--t3)}
+.dm-card strong{font:700 19px/1.1 var(--fd);letter-spacing:-.02em}
+.dm-card em{font-style:normal;font-size:10px;font-weight:600}
+.dm-tags{display:flex;gap:4px;flex-wrap:wrap}
+.dm-tag{font-size:9.5px;font-weight:600;padding:3px 7px;border-radius:999px;white-space:nowrap}
+.dm-row{display:flex;align-items:center;gap:6px;margin-top:auto}
+.dm-btn{font-size:10.5px;font-weight:600;padding:6px 11px;border-radius:var(--rb);white-space:nowrap}
+.dm-btn.pri{background:var(--pr);color:var(--pf);box-shadow:0 1px 2px rgba(0,0,0,.15),inset 0 1px 0 rgba(255,255,255,.18)}
+.dm-btn.sec{background:var(--sf);color:var(--t1);box-shadow:inset 0 0 0 1px var(--bd)}
+.dm-link{font-size:10.5px;color:var(--ac);text-decoration:underline;text-underline-offset:2px}
+/* detail sheet */
+.dss{position:fixed;inset:0;z-index:200;background:rgba(10,10,20,.45);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;justify-content:flex-end}
+.dss[hidden]{display:none}
+.dss-in{width:min(920px,100%);height:100%;overflow:auto;background:var(--paper);padding:32px clamp(18px,4vw,44px) 56px;animation:dssIn .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes dssIn{from{transform:translateX(40px);opacity:0}to{transform:none;opacity:1}}
+.dss-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
+.dss-head h3{font:800 40px/1 var(--display);letter-spacing:-.04em;margin:12px 0 10px}
+.dss-head p{color:var(--muted);font-size:16px;max-width:60ch;margin:0}
+.dss-x{flex:none;width:42px;height:42px;border-radius:50%;border:0;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);cursor:pointer;font-size:15px;color:var(--ink)}
+.dss-preview{margin:26px 0}
+.dss-preview .dm{height:300px;box-shadow:0 30px 60px -40px rgba(0,0,0,.4)}
+.dss-preview .dm-h{font-size:18px}.dss-preview .dm-side{font-size:13px}.dss-preview .dm-card strong{font-size:26px}.dss-preview .dm-btn,.dss-preview .dm-link{font-size:12.5px}.dss-preview .dm-tag{font-size:11px}
+.dss-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.dss-grid section{background:var(--surface);border-radius:20px;padding:22px;box-shadow:inset 0 0 0 1px var(--line)}
+.dss-grid h4{font:500 11.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+.dss-grid h4:not(:first-child){margin-top:22px}
+.dss-sw{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.dss-sw div{display:grid;grid-template-columns:28px 1fr;grid-template-rows:auto auto;column-gap:10px;align-items:center}
+.dss-sw i{grid-row:1/3;width:28px;height:28px;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+.dss-sw b{font-size:13px;font-weight:600}.dss-sw code{font:12px var(--mono);color:var(--muted)}
+.dss-tags,.dss-use{display:flex;flex-wrap:wrap;gap:6px}
+.dss-tags span{font-size:12px;font-weight:600;padding:5px 10px;border-radius:999px}
+.dss-use span{font-size:12.5px;padding:5px 11px;border-radius:999px;background:var(--paper);box-shadow:inset 0 0 0 1px var(--line)}
+.dss-type{display:flex;flex-direction:column;gap:12px}
+.dss-type>div{display:grid;grid-template-columns:62px 1fr;grid-template-rows:auto auto;column-gap:10px}
+.dss-type span{grid-row:1/3;font:500 11px var(--mono);color:var(--muted);padding-top:4px}
+.dss-type b{font-size:26px;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.dss-type p{margin:0;font-size:14px}.dss-type small{font:11.5px var(--body);color:var(--muted)}
+.dss-shape{display:flex;flex-wrap:wrap;gap:8px;margin:0}
+.dss-shape span{font-size:12px;padding:8px 12px;background:var(--paper);box-shadow:inset 0 0 0 1px var(--line);border-radius:6px}
+.dss-grid ol,.dss-grid ul{margin:0;padding-left:18px;font-size:14px;line-height:1.6}
+.dss-grid li{margin:4px 0}
+.dss-comp{columns:1}
+.dss-dd{grid-column:1/-1;display:grid!important;grid-template-columns:1fr 1fr;gap:20px}
+.dss-dd h4{margin-top:0!important}
+@media (max-width:760px){.ds-grid{grid-template-columns:1fr}.dss-grid,.dss-dd{grid-template-columns:1fr}.dss-sw{grid-template-columns:1fr}.dss-preview .dm{height:260px}.ds-note{flex-direction:column;gap:6px}}
+
 /* v19: case figure frames — keep board content off the rounded edge */
 .case-figs figure{gap:14px}
 .case-figs .fig-frame{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:clamp(10px,2vw,22px);box-shadow:0 20px 40px -34px rgba(20,15,40,.35)}
@@ -936,6 +1019,139 @@ body.v10 .h10-panel{background:transparent;color:var(--ink);min-height:0;margin:
 .case-bar .wrap{gap:12px}.case-bar .crumbs{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .case-bar .btn{flex:none;white-space:nowrap}
 @media (max-width:600px){.case-bar .btn{padding:8px 14px;font-size:13px}}
+
+/* ===== v20: Rico04 — warm editorial language applied to the whole portfolio ===== */
+body.v10,body.v10.r4{color-scheme:light;
+  --paper:#F2F1ED;--surface:#FFFFFF;--app:#FBFBF9;--well:#F5F2EB;--ink:#10100E;--ink-d:#3F3A2C;--muted:#6B6860;--muted2:#7E7B74;
+  --line:#E6E3DB;--line2:#EFEDE7;--accent:#24211A;--accent-soft:#F5F2EB;--link:#2F64B8;--brand:#FFDB40;--ok:#0A7F5A;--warm-black:#24211A;
+  --display:"Newsreader","Source Serif 4",Georgia,serif;--body:"Inter",system-ui,sans-serif;background:var(--paper);color:var(--ink)}
+@media (prefers-color-scheme:dark){body.v10{--paper:#F2F1ED;--surface:#FFFFFF;--ink:#10100E;--muted:#6B6860;--line:#E6E3DB;--accent:#24211A;--accent-soft:#F5F2EB}}
+body.v10 ::selection{background:#FFE98A}
+body.v10 a{color:inherit}
+/* eyebrow labels: sentence case, no mono caps */
+body.v10 .k10{font:500 14px/1.4 var(--body);letter-spacing:0;text-transform:none;color:var(--muted2)}
+body.v10 .k10::before{width:8px;height:8px;border-radius:2px;background:var(--brand);box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+body.v10 .s10-head h2,body.v10 h2,body.v10 h3{font-family:var(--display);font-weight:500;letter-spacing:-.015em;color:var(--ink)}
+body.v10 .s10-head h2{font-size:clamp(32px,3.6vw,46px);line-height:1.12;max-width:20ch}
+body.v10 .s10-side{color:var(--muted)}
+body.v10 .s10-side a{color:var(--link);border-bottom-color:currentColor}
+/* nav */
+body.v10 .n10{background:color-mix(in srgb,var(--paper) 88%,transparent)}
+body.v10 .n10.scrolled{box-shadow:0 1px 0 var(--line)}
+body.v10 .n10 ul{background:transparent;box-shadow:none;gap:2px}
+body.v10 .n10 ul a{color:var(--muted);font-size:14px;padding:8px 12px}
+body.v10 .n10 ul a:hover{background:var(--surface);color:var(--ink)}
+body.v10 .n10-logo .mk{background:var(--warm-black);color:#fff;border-radius:10px;font-family:var(--display);font-weight:600;font-size:15px}
+body.v10 .n10-logo .mk::after{background:var(--brand);box-shadow:0 0 0 2.5px var(--paper)}
+body.v10 .n10-logo b{font-weight:600}
+/* buttons */
+body.v10 .b10{background:var(--warm-black);color:#fff;box-shadow:none;border-radius:10px;height:44px;font-weight:500}
+body.v10 .b10.ghost,body.v10 .b10.glass{background:var(--surface);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+body.v10 .b10.accent{background:var(--warm-black);color:#fff;box-shadow:none}
+body.v10 .b10:hover{transform:none;background:#3a3529}
+body.v10 .b10.ghost:hover,body.v10 .b10.glass:hover{background:var(--app)}
+/* hero */
+.r4h{padding:40px 0 0}
+.r4-hero{display:grid;grid-template-columns:1.25fr .75fr;gap:64px;align-items:end}
+.r4-kicker{display:flex;align-items:center;gap:10px;margin:0 0 28px;font-size:14.5px;color:var(--muted)}
+.r4-dot{width:10px;height:10px;border-radius:3px;background:var(--brand);box-shadow:inset 0 0 0 1px rgba(0,0,0,.1)}
+.r4h h1{font:400 clamp(44px,5.6vw,80px)/1.02 var(--display);letter-spacing:-.025em;color:var(--ink);margin:0;max-width:14ch}
+.r4-lede{font-size:18px;line-height:1.65;color:var(--muted);max-width:52ch;margin:28px 0 0}
+.r4-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.r4-btn{display:inline-flex;align-items:center;height:46px;padding:0 20px;border-radius:10px;background:var(--warm-black);color:#fff!important;text-decoration:none;font-weight:500;font-size:15px;transition:background .2s}
+.r4-btn:hover{background:#3a3529}
+.r4-btn.sec{background:var(--surface);color:var(--ink)!important;box-shadow:inset 0 0 0 1px var(--line)}
+.r4-btn.sec:hover{background:var(--app)}
+.r4-avail{display:flex;align-items:center;gap:8px;margin:26px 0 0;font-size:14px;color:var(--muted)}
+.r4-live{width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.r4-photo{margin:0;justify-self:end;width:100%;max-width:360px}
+.r4-photo img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%;border-radius:16px;background:var(--well)}
+.r4-photo figcaption{display:flex;justify-content:space-between;gap:12px;padding:12px 2px 0;font-size:13px;color:var(--muted)}
+.r4-photo figcaption span:first-child{color:var(--ink);font-weight:500}
+body.v10 .h10-stats{margin-top:56px;border-top:1px solid var(--line)}
+body.v10 .h10-stats div{border-left-color:var(--line)}
+body.v10 .h10-stats b{font:500 36px/1 var(--display);letter-spacing:-.02em;color:var(--ink)}
+body.v10 .h10-stats span{color:var(--muted)}
+.r4-logos{display:flex;gap:20px;align-items:baseline;margin-top:40px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.r4-logos span{flex:none;font-size:13.5px;color:var(--muted2)}
+.r4-logos p{margin:0;font:400 20px/1.4 var(--display);color:var(--ink-d)}
+@media (max-width:900px){.r4-hero{grid-template-columns:1fr;gap:36px}.r4-photo{justify-self:start;max-width:260px;order:-1}.r4-logos{flex-direction:column;gap:6px}}
+/* case cards */
+body.v10 .c10{background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);border-radius:20px}
+body.v10 .c10:hover{box-shadow:inset 0 0 0 1px #D9D5CB}
+body.v10 .c10-img{background:var(--well)}
+body.v10 .c10-n{font:500 13px/1 var(--body);letter-spacing:0;text-transform:none;color:var(--muted2)}
+body.v10 .c10-n b{color:var(--ink)}
+body.v10 .c10 h3{font:500 clamp(30px,3vw,40px)/1.05 var(--display);letter-spacing:-.02em}
+body.v10 .c10-meta small{font:500 12px/1 var(--body);letter-spacing:0;text-transform:none;color:var(--muted2)}
+body.v10 .c10-tags span{background:var(--well);box-shadow:none;color:var(--ink-d)}
+body.v10 .c10-go{font-weight:500}
+body.v10 .c10-go i{background:var(--warm-black);width:40px;height:40px}
+body.v10 .c10:hover .c10-go i{transform:translateX(3px);background:var(--warm-black)}
+/* design systems */
+body.v10 .ds-card{border-radius:20px;box-shadow:inset 0 0 0 1px var(--line)}
+body.v10 .ds-card:hover{transform:none;box-shadow:inset 0 0 0 1px #D9D5CB}
+body.v10 .ds-n{font:500 13px/1 var(--body);letter-spacing:0;text-transform:none}
+body.v10 .ds-n b{color:var(--ink)}
+body.v10 .ds-name{font:500 28px/1.1 var(--display);letter-spacing:-.01em}
+body.v10 .ds-meta span{background:var(--well);box-shadow:none}
+body.v10 .ds-note{background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);border-radius:16px}
+body.v10 .dss-in{background:var(--paper)}
+body.v10 .dss-head h3{font:500 44px/1 var(--display)}
+body.v10 .dss-grid section{border-radius:16px}
+body.v10 .dss-grid h4{font:600 13px/1.3 var(--body);letter-spacing:0;text-transform:none;color:var(--ink)}
+/* services / process */
+body.v10 .pc{border-radius:16px;box-shadow:inset 0 0 0 1px var(--line);background:var(--surface)}
+body.v10 .pc:hover{transform:none}
+body.v10 .pc.dark{background:var(--surface);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+body.v10 .pc.dark p{color:var(--muted)}
+body.v10 .pc.dark ul,body.v10 .pc.dark li{border-color:var(--line)}
+body.v10 .pn{font:500 14px/1 var(--display);color:var(--muted2)}
+body.v10 .pc h3{font:500 30px/1.1 var(--display);margin-top:28px}
+body.v10 .pc li::after{content:none}
+body.v10 .proc10{border-radius:16px;box-shadow:inset 0 0 0 1px var(--line)}
+body.v10 .proc10 b{font:500 14px/1 var(--display);color:var(--muted2)}
+body.v10 .proc10 h4{font:500 20px/1.2 var(--display)}
+.r4-skills{width:min(1240px,100% - 48px);margin:24px auto 0;display:flex;gap:20px;align-items:baseline;padding:18px 0;border-top:1px solid var(--line)}
+.r4-skills span{flex:none;font-size:13.5px;color:var(--muted2)}
+.r4-skills p{margin:0;font-size:15px;line-height:1.7;color:var(--ink-d)}
+@media (max-width:760px){.r4-skills{flex-direction:column;gap:6px}}
+/* experience */
+body.v10 .xn{font:500 14px/1.9 var(--display);color:var(--muted2)}
+body.v10 .xp10 h3{font:500 22px/1.25 var(--display)}
+body.v10 .xp10 li:hover{padding-left:0}
+body.v10 .edu10 small{font:600 13px/1 var(--body);letter-spacing:0;text-transform:none;color:var(--ink)}
+body.v10 .xp10 time{font:400 13.5px/1.9 var(--body)}
+/* ux writing */
+body.v10 #writing .uxc{border-radius:16px;box-shadow:none;border:1px solid var(--line)}
+body.v10 #writing .uxc:hover{transform:none;box-shadow:none}
+body.v10 #writing .uxc .k{font:600 13px var(--body);letter-spacing:0;text-transform:none}
+/* contact */
+body.v10 .ct10{background:var(--warm-black);border-radius:20px}
+body.v10 .ct10::before{content:none}
+body.v10 .ct10 .k10{color:#BDB6A6}
+body.v10 .ct10 h2{font:400 clamp(36px,5vw,64px)/1.05 var(--display);letter-spacing:-.02em;color:#fff;max-width:18ch}
+body.v10 .ct10>p{color:#C9C2B3}
+body.v10 .ct10-mail a{font:400 clamp(22px,3vw,34px)/1.2 var(--display);border-bottom:1px solid rgba(255,255,255,.35)}
+body.v10 .ct10-mail a:hover{border-color:var(--brand)}
+body.v10 .ct10-mail .b10{background:var(--brand);color:#24211A}
+body.v10 .ct10-links>*{border-radius:12px;background:rgba(255,255,255,.04)}
+body.v10 .ct10-links small{font:500 12.5px/1 var(--body);letter-spacing:0;text-transform:none;color:#A39D90}
+/* case study overlay */
+body.v10 .case{background:var(--paper)}
+body.v10 .case-hero h1{font:400 clamp(40px,5vw,68px)/1.04 var(--display);letter-spacing:-.02em}
+body.v10 .case .tag,body.v10 .case-figs figcaption{font:500 14px/1.4 var(--body);letter-spacing:0;text-transform:none;color:var(--muted)}
+body.v10 .case-figs .fig-frame{border-radius:16px;box-shadow:none}
+body.v10 .case .btn{background:var(--warm-black);color:#fff;border-radius:10px}
+body.v10 .case .btn.ghost{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+/* motion: quieter */
+body.v10 .rv{transform:none;transition:opacity .6s ease}
+
+body.v10 #writing .row small{font:600 12px/1 var(--body);letter-spacing:0;text-transform:none}
+body.v10 #writing .row.a{border-left-color:var(--warm-black)}
+
+@media (max-width:900px){.r4-photo{max-width:200px}.r4-photo figcaption{flex-direction:column;gap:2px}.r4-kicker{margin-bottom:18px;font-size:13.5px}.r4h{padding-top:20px}}
+.r4-avail{align-items:flex-start}.r4-live{margin-top:6px;flex:none}
 </style>
 </head>
 <body class="v10">
@@ -945,6 +1161,7 @@ body.v10 .h10-panel{background:transparent;color:var(--ink);min-height:0;margin:
     <a class="n10-logo" href="#top"><span class="mk">JB</span><b>Joyeta Banerjee</b></a>
     <ul>
       <li><a href="#work">Work</a></li>
+      <li><a href="#systems">Design systems</a></li>
       <li><a href="#services">What I do</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#writing">UX writing</a></li>
@@ -953,35 +1170,26 @@ body.v10 .h10-panel{background:transparent;color:var(--ink);min-height:0;margin:
   </div>
 </nav>
 
-<header class="h10" id="top">
-  <div class="h10-panel">
-    <div class="h10-stack" aria-hidden="true">
-      <a class="st st1" href="#case-shuddhi"><img src="assets/shuddhi-thumb.jpg" alt=""></a>
-      <a class="st st2" href="#case-shonchoy"><img src="assets/shonchoy-thumb.jpg" alt=""></a>
-      <a class="st st3" href="#case-moodbrew"><img src="assets/moodbrew-thumb.jpg" alt=""></a>
-      <span class="st-tag">5 case studies · live prototypes</span>
+<header class="h10 r4h" id="top">
+  <div class="w10 r4-hero">
+    <div class="r4-copy">
+      <p class="r4-kicker"><span class="r4-dot" aria-hidden="true"></span>Joyeta Banerjee · Product Designer · Khulna, Bangladesh</p>
+      <h1>I design products that teams can actually ship.</h1>
+      <p class="r4-lede">User flows, design systems and interfaces for apps, e-commerce and SaaS. Two years of running product delivery taught me to design with scope, edge cases and handoff in mind.</p>
+      <div class="r4-cta"><a class="r4-btn" href="#work">See case studies</a><a class="r4-btn sec" href="#contact">Get in touch</a></div>
+      <p class="r4-avail"><span class="r4-live" aria-hidden="true"></span><span>Open to remote product design roles · <span id="khulnaNow">Khulna</span></span></p>
     </div>
-    <div class="h10-copy">
-      <span class="h10-hi"><span class="wave">👋</span><span>Hi, I'm <b>Joyeta</b></span><span class="h10-open"><i></i>Open to remote</span></span>
-      <h1>Product Designer who designs what teams can <em>ship.</em></h1>
-      <div class="h10-roles" aria-label="UI/UX Designer, Product Manager, UX Writer"><span class="lbl">I work as</span><span class="roll"><span>UI/UX Designer</span><span>Product Manager</span><span>UX Writer</span><span>UI/UX Designer</span></span></div>
-      <div class="h10-me"><figure class="pf"><span class="pf-back" aria-hidden="true"></span><img src="assets/joyeta-avatar.jpg" alt="Joyeta Banerjee"><figcaption><i></i>Available</figcaption></figure><p class="h10-lede">User flows, design systems and interfaces for apps, e-commerce and SaaS — with a PM's eye for scope and handoff.</p></div>
-      <div class="h10-cta"><a class="b10 accent" href="#work">View my work <span>↓</span></a><a class="b10 glass" href="#contact">Contact me</a></div>
-      <div class="h10-tz"><span class="tz-label">Overlapping hours with your team</span><div class="tz-row" id="tzRow"></div></div>
-    </div>
+    <figure class="r4-photo"><img src="assets/joyeta-hero-saree.jpg" alt="Joyeta Banerjee" fetchpriority="high"><figcaption><span>Joyeta Banerjee</span><span>M.Sc. ICT, KUET · IEEE author</span></figcaption></figure>
   </div>
   <div class="w10 h10-stats">
-    <div><b>5</b><span>case studies in Figma</span></div>
-    <div><b>2+ yrs</b><span>leading product & design teams</span></div>
-    <div><b>PRD → UI</b><span>from requirement to final screen</span></div>
-    <div><b>M.Sc.</b><span>ICT · KUET (ongoing)</span></div>
+    <div><b>5</b><span>case studies with live prototypes</span></div>
+    <div><b>2+ yrs</b><span>leading product &amp; design delivery</span></div>
+    <div><b>7</b><span>design languages documented</span></div>
+    <div><b>1</b><span>first-author IEEE paper</span></div>
   </div>
 </header>
 
-<div class="logos10" aria-label="Teams I've worked with">
-  <span class="lbl">Worked with</span>
-  <div class="logos10-track"><div><b>Creatibuzz</b><b>Akij iBOS</b><b>Fileion</b><b>ishQool</b><b>YSSE</b><b>Zaman Tech</b></div><div aria-hidden="true"><b>Creatibuzz</b><b>Akij iBOS</b><b>Fileion</b><b>ishQool</b><b>YSSE</b><b>Zaman Tech</b></div></div>
-</div>
+<div class="w10 r4-logos"><span>Worked with</span><p>Creatibuzz · Akij iBOS · Fileion · ishQool · YSSE · Zaman Tech</p></div>
 
 <section class="s10" id="work">
   <div class="w10">
@@ -991,9 +1199,18 @@ body.v10 .h10-panel{background:transparent;color:var(--ink);min-height:0;margin:
   </div>
 </section>
 
+<section class="s10" id="systems">
+  <div class="w10">
+    <div class="s10-head"><div><span class="k10">Design systems</span><h2>Seven design languages, written as specs.</h2></div><p class="s10-side">Each one is a full spec — color tokens, type scale, spacing, components, interaction states and do/don't rules — that a designer or an AI agent can build from. Tap a card to open it.</p></div>
+    <div class="ds-grid" id="dsGrid"></div>
+    <div class="ds-note"><b>How I use them</b><span>I write each language as a structured "skill" file, then use it to generate and review screens in Figma and code. It keeps every product visually consistent and turns taste into rules a team can follow.</span></div>
+  </div>
+</section>
+<div class="dss" id="dsSheet" hidden role="dialog" aria-modal="true" aria-label="Design language details"></div>
+
 <section class="s10" id="services">
   <div class="w10">
-    <div class="s10-head"><div><span class="k10">What I do</span><h2>Research it. Design it.<br>Ship it.</h2></div></div>
+    <div class="s10-head"><div><span class="k10">What I do</span><h2>How I work, from research to handoff.</h2></div></div>
     <div class="pill10">
       <div class="pc"><span class="pn">01</span><h3>Research</h3><p>Find the real problem before drawing a screen.</p><ul><li>User interviews</li><li>Competitor audits</li><li>Personas & journey maps</li><li>Problem → solution maps</li></ul></div>
       <div class="pc dark"><span class="pn">02</span><h3>Design</h3><p>Clear flows and interfaces on a system that scales.</p><ul><li>User flows & IA</li><li>Wireframes & high-fidelity UI</li><li>Design systems & variables</li><li>Interactive prototypes</li></ul></div>
@@ -1007,7 +1224,7 @@ body.v10 .h10-panel{background:transparent;color:var(--ink);min-height:0;margin:
       <div><b>05</b><h4>Ship</h4><span>Handoff, design QA</span></div>
     </div>
   </div>
-  <div class="sb10" aria-label="Skills: Figma, Design systems, User research, Prototyping, Journey mapping, Wireframes, Variables & auto layout, UX writing, PRD writing, RICE · MoSCoW, Agile / Scrum, Design QA, HTML & CSS, Jira"><div class="sb10-track" aria-hidden="true"><div><span class="sk0">Figma</span><i>✦</i><span class="sk1">Design systems</span><i>✦</i><span class="sk0">User research</span><i>✦</i><span class="sk1">Prototyping</span><i>✦</i><span class="sk0">Journey mapping</span><i>✦</i><span class="sk1">Wireframes</span><i>✦</i><span class="sk0">Variables & auto layout</span><i>✦</i><span class="sk1">UX writing</span><i>✦</i><span class="sk0">PRD writing</span><i>✦</i><span class="sk1">RICE · MoSCoW</span><i>✦</i><span class="sk0">Agile / Scrum</span><i>✦</i><span class="sk1">Design QA</span><i>✦</i><span class="sk0">HTML & CSS</span><i>✦</i><span class="sk1">Jira</span><i>✦</i></div><div><span class="sk0">Figma</span><i>✦</i><span class="sk1">Design systems</span><i>✦</i><span class="sk0">User research</span><i>✦</i><span class="sk1">Prototyping</span><i>✦</i><span class="sk0">Journey mapping</span><i>✦</i><span class="sk1">Wireframes</span><i>✦</i><span class="sk0">Variables & auto layout</span><i>✦</i><span class="sk1">UX writing</span><i>✦</i><span class="sk0">PRD writing</span><i>✦</i><span class="sk1">RICE · MoSCoW</span><i>✦</i><span class="sk0">Agile / Scrum</span><i>✦</i><span class="sk1">Design QA</span><i>✦</i><span class="sk0">HTML & CSS</span><i>✦</i><span class="sk1">Jira</span><i>✦</i></div></div></div>
+  <div class="r4-skills"><span>Tools &amp; methods</span><p>Figma · Design systems · User research · Prototyping · Journey mapping · Wireframes · Variables & auto layout · UX writing · PRD writing · RICE · MoSCoW · Agile / Scrum · Design QA · HTML & CSS · Jira</p></div>
 </section>
 
 <section class="s10" id="experience">
@@ -1027,7 +1244,7 @@ body.v10 .h10-panel{background:transparent;color:var(--ink);min-height:0;margin:
 
 <section class="s10" id="writing">
   <div class="w10">
-    <div class="s10-head"><div><span class="k10">UX writing</span><h2>Words are part of<br>the interface.</h2></div><p class="s10-side">Microcopy I rewrite so users always know what happened and what to do next.</p></div>
+    <div class="s10-head"><div><span class="k10">UX writing</span><h2>Words are part of the interface.</h2></div><p class="s10-side">Microcopy I rewrite so users always know what happened and what to do next.</p></div>
     <div class="ux">
       <div class="uxc">
         <div class="uxc-top"><span class="k">Error message</span><span class="ctx">Form error</span></div>
@@ -1067,7 +1284,7 @@ body.v10 .h10-panel{background:transparent;color:var(--ink);min-height:0;margin:
   <div class="w10">
     <div class="ct10">
       <span class="k10 light">Contact</span>
-      <h2>Have something worth<br>designing well? <em>Let's talk.</em></h2>
+      <h2>Have something worth designing well?</h2>
       <p>Open to remote Product Designer and UI/UX roles worldwide. Let’s talk about how I can help your team ship better products.</p>
       <div class="ct10-mail"><a href="mailto:banerjeejoyee3@gmail.com">banerjeejoyee3@gmail.com</a><button class="b10 accent" type="button" data-copy="banerjeejoyee3@gmail.com">Copy email</button></div>
       <div class="ct10-links">
@@ -1083,6 +1300,7 @@ body.v10 .h10-panel{background:transparent;color:var(--ink);min-height:0;margin:
 
 <div id="caseLayer"></div>
 <script src="proto.js"></script>
+<script src="systems.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
