@@ -1152,6 +1152,33 @@ body.v10 #writing .row.a{border-left-color:var(--warm-black)}
 
 @media (max-width:900px){.r4-photo{max-width:200px}.r4-photo figcaption{flex-direction:column;gap:2px}.r4-kicker{margin-bottom:18px;font-size:13.5px}.r4h{padding-top:20px}}
 .r4-avail{align-items:flex-start}.r4-live{margin-top:6px;flex:none}
+/* v21: original layout, Rico04 language */
+body.v10 .h10 h1{font:400 clamp(44px,5.4vw,78px)/1.02 var(--display);letter-spacing:-.025em;max-width:13ch;margin:26px 0 20px}
+body.v10 .h10 h1 em{font-style:italic;color:var(--ink)}
+body.v10 .h10-hi{gap:10px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);color:var(--muted)}
+body.v10 .h10-hi .r4-dot{margin-left:4px}
+body.v10 .h10-roles{font-size:16px;color:var(--muted);height:auto}
+body.v10 .roles-static{color:var(--ink);font-weight:500}
+body.v10 .pf-back{background:var(--well);box-shadow:inset 0 0 0 1px var(--line);opacity:1;transform:rotate(-5deg) translate(-6px,6px)}
+body.v10 .pf-back::after{display:none}
+body.v10 .pf:hover .pf-back{transform:rotate(-7deg) translate(-7px,7px)}
+body.v10 .pf img{object-position:50% 18%;box-shadow:0 18px 36px -26px rgba(36,33,26,.45)}
+body.v10 .pf figcaption{background:var(--warm-black)}
+body.v10 .pf figcaption i{background:var(--ok)}
+body.v10 .b10{border-radius:10px;height:46px;font-weight:500;box-shadow:none}
+body.v10 .b10:hover{transform:none}
+body.v10 .b10.accent{background:var(--warm-black);color:#fff}
+body.v10 .b10.accent:hover{background:#3a3529}
+body.v10 .b10.glass{background:var(--surface);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line);backdrop-filter:none}
+body.v10 .b10.glass:hover{background:var(--app)}
+body.v10 .tz-label{font:400 13.5px/1.4 var(--body);text-transform:none;letter-spacing:0;color:var(--muted2)}
+body.v10 .tz-chip{border-radius:10px}
+body.v10 .tz-chip.home{border-color:var(--warm-black);background:var(--surface);box-shadow:inset 0 -3px 0 var(--brand)}
+body.v10 .tz-chip.home span{color:var(--ink-d)}
+body.v10 .st{border-radius:16px;box-shadow:0 24px 48px -36px rgba(36,33,26,.4)}
+body.v10 .st-tag{font:500 12.5px/1 var(--body);letter-spacing:0;background:var(--warm-black);border-radius:8px}
+body.v10 .h10-roles{flex-wrap:wrap;gap:4px 10px}body.v10 .h10-roles .lbl{white-space:nowrap;line-height:1.5}
+@media (max-width:600px){body.v10 .h10 h1{font-size:42px}body.v10 .h10-roles{font-size:15px}}
 </style>
 </head>
 <body class="v10">
@@ -1161,7 +1188,6 @@ body.v10 #writing .row.a{border-left-color:var(--warm-black)}
     <a class="n10-logo" href="#top"><span class="mk">JB</span><b>Joyeta Banerjee</b></a>
     <ul>
       <li><a href="#work">Work</a></li>
-      <li><a href="#systems">Design systems</a></li>
       <li><a href="#services">What I do</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#writing">UX writing</a></li>
@@ -1170,21 +1196,27 @@ body.v10 #writing .row.a{border-left-color:var(--warm-black)}
   </div>
 </nav>
 
-<header class="h10 r4h" id="top">
-  <div class="w10 r4-hero">
-    <div class="r4-copy">
-      <p class="r4-kicker"><span class="r4-dot" aria-hidden="true"></span>Joyeta Banerjee · Product Designer · Khulna, Bangladesh</p>
-      <h1>I design products that teams can actually ship.</h1>
-      <p class="r4-lede">User flows, design systems and interfaces for apps, e-commerce and SaaS. Two years of running product delivery taught me to design with scope, edge cases and handoff in mind.</p>
-      <div class="r4-cta"><a class="r4-btn" href="#work">See case studies</a><a class="r4-btn sec" href="#contact">Get in touch</a></div>
-      <p class="r4-avail"><span class="r4-live" aria-hidden="true"></span><span>Open to remote product design roles · <span id="khulnaNow">Khulna</span></span></p>
+<header class="h10" id="top">
+  <div class="h10-panel">
+    <div class="h10-stack" aria-hidden="true">
+      <a class="st st1" href="#case-shuddhi"><img src="assets/shuddhi-thumb.jpg" alt=""></a>
+      <a class="st st2" href="#case-shonchoy"><img src="assets/shonchoy-thumb.jpg" alt=""></a>
+      <a class="st st3" href="#case-moodbrew"><img src="assets/moodbrew-thumb.jpg" alt=""></a>
+      <span class="st-tag">5 case studies · live prototypes</span>
     </div>
-    <figure class="r4-photo"><img src="assets/joyeta-hero-saree.jpg" alt="Joyeta Banerjee" fetchpriority="high"><figcaption><span>Joyeta Banerjee</span><span>M.Sc. ICT, KUET · IEEE author</span></figcaption></figure>
+    <div class="h10-copy">
+      <span class="h10-hi"><span class="r4-dot" aria-hidden="true"></span><span>Hi, I'm <b>Joyeta</b></span><span class="h10-open"><i></i>Open to remote</span></span>
+      <h1>Product Designer who designs what teams can <em>ship.</em></h1>
+      <div class="h10-roles" aria-label="UI/UX Designer, Product Manager, UX Writer"><span class="lbl">I work as</span><span class="roles-static">UI/UX Designer · Product Manager · UX Writer</span></div>
+      <div class="h10-me"><figure class="pf"><span class="pf-back" aria-hidden="true"></span><img src="assets/joyeta-hero-saree.jpg" alt="Joyeta Banerjee"><figcaption><i></i>Available</figcaption></figure><p class="h10-lede">User flows, design systems and interfaces for apps, e-commerce and SaaS — with a PM's eye for scope and handoff.</p></div>
+      <div class="h10-cta"><a class="b10 accent" href="#work">View my work</a><a class="b10 glass" href="#contact">Contact me</a></div>
+      <div class="h10-tz"><span class="tz-label">Overlapping hours with your team</span><div class="tz-row" id="tzRow"></div></div>
+    </div>
   </div>
   <div class="w10 h10-stats">
     <div><b>5</b><span>case studies with live prototypes</span></div>
     <div><b>2+ yrs</b><span>leading product &amp; design delivery</span></div>
-    <div><b>7</b><span>design languages documented</span></div>
+    <div><b>PRD → UI</b><span>from requirement to final screen</span></div>
     <div><b>1</b><span>first-author IEEE paper</span></div>
   </div>
 </header>
@@ -1199,14 +1231,7 @@ body.v10 #writing .row.a{border-left-color:var(--warm-black)}
   </div>
 </section>
 
-<section class="s10" id="systems">
-  <div class="w10">
-    <div class="s10-head"><div><span class="k10">Design systems</span><h2>Seven design languages, written as specs.</h2></div><p class="s10-side">Each one is a full spec — color tokens, type scale, spacing, components, interaction states and do/don't rules — that a designer or an AI agent can build from. Tap a card to open it.</p></div>
-    <div class="ds-grid" id="dsGrid"></div>
-    <div class="ds-note"><b>How I use them</b><span>I write each language as a structured "skill" file, then use it to generate and review screens in Figma and code. It keeps every product visually consistent and turns taste into rules a team can follow.</span></div>
-  </div>
-</section>
-<div class="dss" id="dsSheet" hidden role="dialog" aria-modal="true" aria-label="Design language details"></div>
+
 
 <section class="s10" id="services">
   <div class="w10">
@@ -1300,7 +1325,7 @@ body.v10 #writing .row.a{border-left-color:var(--warm-black)}
 
 <div id="caseLayer"></div>
 <script src="proto.js"></script>
-<script src="systems.js"></script>
+
 <script src="app.js"></script>
 </body>
 </html>
