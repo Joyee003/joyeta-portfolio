@@ -10,11 +10,11 @@ const P = [
   },
   {
     id: 'nexa', n: '03', title: 'Nexa One',
-    line: 'One design system for six business tools: CRM, ERP, HRM, Payroll, Accounting and POS.',
-    tags: ['B2B SaaS', 'Dashboards', 'Information architecture', 'Design system', 'RICE'],
-    facts: [['Role', 'Product Designer & Technical PM'], ['Platform', 'Web app + tablet POS'], ['Type', 'Concept project'], ['Tools', 'Figma, Jira, Notion']],
-    caps: ['Overview', 'Problem & solution', 'Research & user roles', 'Information architecture', 'Cross-module flows', 'Design system', 'Final UI · 6 modules', 'Prioritisation & metrics'],
-    alts: ['Nexa One cover with three module dashboards', 'Problem, how-might-we and solution cards', 'Four user roles and three insights', 'Six module menus on a shared data layer', 'Quote to cash, hire to pay and counter to stock flows', 'Shell anatomy, colour variables and shared components', 'CRM, ERP, HRM, Payroll, Accounting and POS screens with design decisions', 'RICE prioritisation table and metrics']
+    line: 'Six business tools. One calm workspace. Zero double entry. A suite for Bangladeshi SMEs, built around eight everyday problems: duplicate customers, salary-day failures, load-shedding at the counter, hand-copied VAT challans and more.',
+    tags: ['B2B SaaS', 'Hypothesis-driven', 'Dashboards', 'Design system', 'RICE'],
+    facts: [['Role', 'Product Designer & Technical Project Manager'], ['Platform', 'Web app + tablet POS'], ['Type', 'Concept project'], ['Tools', 'Figma, Jira, Notion']],
+    caps: ['Overview', 'Problem & solution', 'Research & user roles', 'Eight problems, eight hypotheses', 'Solutions · six new screens', 'Information architecture', 'Cross-module flows', 'Design system', 'Final UI · 6 modules', 'Prioritisation & metrics'],
+    alts: ['Nexa One cover with three module dashboards', 'Problem, how-might-we and solution cards', 'Four user roles and three insights', 'Eight problem cards, each with a hypothesis, the designed solution and a success metric', 'Payroll pre-flight, duplicate check, POS offline mode, VAT challans, approvals inbox and customer dues screens', 'Six module menus on a shared data layer', 'Quote to cash, hire to pay and counter to stock flows', 'Shell anatomy, colour variables and shared components', 'CRM, ERP, HRM, Payroll, Accounting and POS screens with design decisions', 'RICE prioritisation table and success metrics']
   },
   {
     id: 'shonchoy', n: '04', title: 'Shonchoy',
