@@ -113,6 +113,45 @@ section:nth-of-type(odd) .st b{box-shadow:0 0 0 6px #F6F5F1}
 .stats{margin-bottom:24px}
 @media(max-width:860px){.proj .card:nth-child(6){display:flex}.proj{grid-template-columns:1fr}.proj .card,.proj .card:nth-child(1),.proj .card:nth-child(2){grid-column:auto}.loop::before{display:none}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat{border-bottom:1px solid var(--line)}.hero::before{display:none}.sample{padding-left:24px}.sample .ico{position:static;margin-bottom:12px}}
 .logo::after{background:var(--p)}
+
+/* responsive (final) */
+.proj .card .kicker{max-width:calc(100% - 64px);white-space:normal;line-height:1.35}
+img{max-width:100%}
+@media(max-width:1024px){
+ .loop{grid-template-columns:repeat(3,1fr)}.loop::before{display:none}
+ .proj{grid-template-columns:repeat(2,1fr)}
+ .proj .card,.proj .card:nth-child(1),.proj .card:nth-child(2){grid-column:span 1}
+ .proj .card:nth-child(6){grid-column:span 2}
+ .hero{gap:32px}
+}
+@media(max-width:760px){
+ .wrap{padding:0 18px}
+ nav ul{display:none}nav .btn{height:38px;padding:0 14px;font-size:14px}
+ .hero{grid-template-columns:1fr;padding:36px 0 24px;gap:28px}
+ .hero::before{display:none}
+ h1{font-size:44px}
+ .lead{font-size:16px}
+ .photo{max-width:320px;margin:0 auto}
+ .badge{left:8px}
+ .stats{grid-template-columns:1fr 1fr}
+ .stat{padding:16px;border-right:0;border-bottom:1px solid var(--line)}
+ .stat:nth-child(odd){border-right:1px solid var(--line)}
+ .stat:nth-last-child(-n+2){border-bottom:0}
+ section{padding:52px 0}
+ h2{font-size:30px}
+ .loop{grid-template-columns:1fr}
+ .proj{grid-template-columns:1fr}
+ .proj .card,.proj .card:nth-child(1),.proj .card:nth-child(2),.proj .card:nth-child(6){grid-column:auto}
+ .proj .card:nth-child(6){display:flex}
+ .live{top:18px;right:18px}
+ .card{padding:22px}
+ .samples,.two{grid-template-columns:1fr}
+ .sample{padding:22px}
+ .sample .ico{position:static;margin-bottom:12px}
+ .tl li{grid-template-columns:1fr;gap:2px}
+ .contact{padding:28px;margin:40px 0}
+ .contact .cta{width:100%}.contact .btn{flex:1;justify-content:center}
+}
 </style></head><body>
 <nav><div class="wrap"><a class="logo" href="#top">Joyeta</a><ul><li><a href="#how">How I work</a></li><li><a href="#projects">Projects</a></li><li><a href="#docs">Frameworks</a></li><li><a href="#toolkit">Toolkit</a></li><li><a href="#experience">Experience</a></li></ul><a class="btn dark" href="#contact">Get in touch</a></div></nav>
 <div class="wrap" id="top">
