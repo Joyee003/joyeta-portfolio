@@ -1,0 +1,239 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Joyeta Banerjee · Data Analytics & Machine Learning</title>
+<meta name="description" content="Data analytics and machine learning portfolio of Joyeta Banerjee, first-author IEEE researcher in emotion recognition.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#24211A;--muted:#6B6860;--line:#E3E0D8;--stone:#F2F1ED;--surface:#fff;--link:#2F64B8;--brand:#FFDB40;--teal:#0F766E}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--stone);color:var(--ink);font:400 16px/1.6 Inter,system-ui,sans-serif}
+a{color:var(--link)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;background:rgba(242,241,237,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:5}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:500 20px Newsreader,serif;color:var(--ink);text-decoration:none}.logo::after{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--brand);margin-left:5px;vertical-align:middle}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}nav ul a{color:var(--ink);text-decoration:none;font-size:14px}nav ul a:hover{color:var(--link)}
+.btn{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 18px;border-radius:10px;font-weight:500;font-size:15px;text-decoration:none}
+.btn.dark{background:#6941E0;color:#fff}.btn.dark:hover{background:#5832C9}.btn.light{background:var(--surface);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.hero{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;padding:72px 0 56px}
+.hello{display:inline-flex;gap:8px;align-items:center;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);border-radius:99px;padding:6px 14px;font-size:14px;color:var(--muted)}
+.hello i{width:8px;height:8px;border-radius:50%;background:#16a34a}
+h1{font:500 clamp(40px,5.2vw,68px)/1.04 Newsreader,serif;letter-spacing:-.02em;margin:20px 0 18px}
+h1 em{font-style:italic;font-weight:400}
+.lead{font-size:18px;color:#45423A;max-width:36em;margin:0 0 28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.photo{position:relative}.photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 18%;border-radius:20px;box-shadow:0 24px 48px -32px rgba(36,33,26,.45)}
+.badge{position:absolute;left:-14px;bottom:24px;background:var(--surface);border-radius:12px;padding:10px 14px;box-shadow:0 12px 28px -16px rgba(36,33,26,.4);font-size:13px}
+.badge b{display:block;font-size:15px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding-bottom:64px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px}
+.stat b{font:500 30px/1 Newsreader,serif;display:block;margin-bottom:6px}.stat span{color:var(--muted);font-size:14px}
+section{padding:64px 0;border-top:1px solid var(--line)}
+.eyebrow{font-size:13px;font-weight:600;color:var(--teal);letter-spacing:.02em;margin-bottom:10px}
+h2{font:500 clamp(30px,3.6vw,44px)/1.1 Newsreader,serif;letter-spacing:-.015em;margin:0 0 14px}
+.sub{color:var(--muted);max-width:40em;margin:0 0 32px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px}
+.card h3{font:500 24px/1.2 Newsreader,serif;margin:0 0 10px}
+.card p{margin:0 0 14px;color:#45423A}
+.chips{display:flex;flex-wrap:wrap;gap:6px}.chips span{background:var(--stone);border-radius:8px;padding:3px 10px;font-size:13px}
+.proj{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.proj .card{display:flex;flex-direction:column}
+.kicker{font-size:12.5px;font-weight:600;color:var(--muted);margin-bottom:8px}
+.steps{margin:6px 0 0;padding:0;list-style:none;font-size:14.5px;color:#45423A}
+.steps li{padding:8px 0;border-top:1px solid var(--line)}.steps b{color:var(--ink);font-weight:600}
+.loop{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.st{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px}.st b{font:500 14px Inter;color:#6941E0}.st h3{font:500 22px/1.2 Newsreader,serif;margin:8px 0 6px}.st p{margin:0;font-size:14px;color:#45423A}
+.samples{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.sample{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px;display:flex;flex-direction:column;text-decoration:none;color:var(--ink);transition:border-color .15s}
+.sample:hover{border-color:var(--ink)}
+.sample .type{display:inline-block;align-self:flex-start;background:#FFF4C2;color:#6B5600;font-size:12px;font-weight:600;border-radius:6px;padding:2px 8px;margin-bottom:14px}
+.sample h3{font:500 22px/1.2 Newsreader,serif;margin:0 0 10px}
+.sample p{color:#45423A;font-size:14.5px;margin:0 0 18px;flex:1}
+.sample .go{font-size:14px;font-weight:600;color:var(--link)}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:180px 1fr;gap:24px;padding:20px 0;border-top:1px solid var(--line)}
+.tl .when{color:var(--muted);font-size:14px}.tl b{font-size:17px}.tl p{margin:4px 0 0;color:#45423A;font-size:15px}
+.tag{display:inline-block;font-size:11.5px;font-weight:600;border-radius:5px;padding:1px 7px;margin-left:8px;vertical-align:2px}
+.pm{background:#E3F1EF;color:var(--teal)}.wr{background:#FFF4C2;color:#6B5600}
+.contact{background:var(--ink);color:#fff;border-radius:24px;padding:48px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin:64px 0}
+.contact h2{color:#fff;margin:0}.contact p{color:#CFCBC2;margin:8px 0 0}
+.contact .btn.y{background:#6941E0;color:#fff}.contact .btn.y:hover{background:#5832C9}
+footer{padding:0 0 40px;color:var(--muted);font-size:13px}
+@media(max-width:860px){.loop{grid-template-columns:1fr}.hero,.two{grid-template-columns:1fr}.proj,.loop{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.st{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px}.st b{font:500 14px Inter;color:#6941E0}.st h3{font:500 22px/1.2 Newsreader,serif;margin:8px 0 6px}.st p{margin:0;font-size:14px;color:#45423A}
+.samples{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}nav ul{display:none}.tl li{grid-template-columns:1fr;gap:4px}.photo{max-width:340px}.contact{padding:32px}}
+
+/* v2 polish */
+:root{--p:#6941E0;--p-soft:#EFEBFC;--p-ink:#3B2399}
+body{background:#F6F5F1}
+.eyebrow{color:var(--p);display:inline-flex;align-items:center;gap:8px}
+.eyebrow::before{content:"";width:18px;height:2px;background:var(--p);border-radius:2px}
+.hero{padding:64px 0 40px;position:relative}
+.hero::before{content:"";position:absolute;right:-80px;top:20px;width:520px;height:520px;border-radius:50%;background:radial-gradient(closest-side,#E9E2FF,transparent);z-index:-1}
+h1 em{color:var(--p)}
+.hello{background:var(--p-soft);box-shadow:none;color:var(--p-ink);font-weight:500}
+.photo img{border-radius:28px;border:6px solid #fff;box-shadow:0 30px 60px -30px rgba(59,35,153,.45)}
+.badge{border-radius:14px;box-shadow:0 16px 32px -16px rgba(59,35,153,.35)}
+.badge b{color:var(--p)}
+.stats{background:#fff;border:1px solid var(--line);border-radius:20px;gap:0;padding:8px 0;margin-bottom:72px}
+.stat{border:0;border-radius:0;background:none;border-right:1px solid var(--line);padding:18px 24px}
+.stat:last-child{border-right:0}
+.stat b{color:var(--p-ink)}
+section{border-top:0;padding:72px 0}
+section:nth-of-type(even){background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.loop{position:relative;gap:18px}
+.loop::before{content:"";position:absolute;left:8%;right:8%;top:42px;height:2px;background:repeating-linear-gradient(90deg,#CFC4F7 0 8px,transparent 8px 14px)}
+.st{position:relative;background:#fff;border-radius:20px;text-align:left;transition:transform .2s,box-shadow .2s}
+.st:hover{transform:translateY(-3px);box-shadow:0 18px 34px -22px rgba(59,35,153,.4)}
+.st b{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--p);color:#fff;font-size:14px;box-shadow:0 0 0 6px #fff}
+section:nth-of-type(odd) .st b{box-shadow:0 0 0 6px #F6F5F1}
+.proj{grid-template-columns:repeat(6,1fr)}
+.proj .card{grid-column:span 2;border-radius:22px;transition:transform .2s,box-shadow .2s,border-color .2s;position:relative}
+.proj .card:nth-child(1),.proj .card:nth-child(2){grid-column:span 3}
+.proj .card:hover{transform:translateY(-3px);border-color:#CFC4F7;box-shadow:0 22px 40px -26px rgba(59,35,153,.45)}
+.kicker{display:inline-block;align-self:flex-start;background:var(--p-soft);color:var(--p-ink);border-radius:999px;padding:4px 10px;font-size:12px}
+.live{position:absolute;top:24px;right:24px;display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#15803d;background:#E7F6EC;border-radius:999px;padding:4px 10px}
+.live::before{content:"";width:6px;height:6px;border-radius:50%;background:#16a34a}
+.steps b{color:var(--p-ink)}
+.links{display:flex;gap:8px;flex-wrap:wrap;padding-top:12px}
+.links a{display:inline-flex;align-items:center;gap:4px;font-size:13.5px;font-weight:600;text-decoration:none;color:var(--p);background:var(--p-soft);border-radius:8px;padding:6px 10px}
+.links a:hover{background:var(--p);color:#fff}
+.sample{border-radius:22px;position:relative;padding-left:84px;transition:transform .2s,box-shadow .2s,border-color .2s}
+.sample:hover{transform:translateY(-3px);border-color:#CFC4F7;box-shadow:0 22px 40px -26px rgba(59,35,153,.45)}
+.sample .ico{position:absolute;left:24px;top:24px;width:44px;height:44px;border-radius:12px;background:var(--p-soft);color:var(--p);display:grid;place-items:center;font:600 15px Inter}
+.sample .type{background:#F2F1ED;color:var(--muted)}
+.sample .go{color:var(--p)}
+.chips span{background:var(--p-soft);color:var(--p-ink)}
+.tl li{grid-template-columns:180px 1fr;position:relative}
+.tl li::before{content:"";position:absolute;left:-18px;top:28px;width:9px;height:9px;border-radius:50%;background:var(--p)}
+.tl{padding-left:18px;border-left:2px solid #E3DCFB}
+.tl li{border-top:0;border-bottom:1px solid var(--line)}
+.contact{background:linear-gradient(135deg,#2A1A6E,#6941E0);border-radius:28px}
+.contact .btn.light{background:rgba(255,255,255,.12);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.3)}
+.contact .btn.y{background:#fff;color:var(--p-ink)}
+.proj .card:nth-child(6){grid-column:span 6;display:grid;grid-template-columns:1fr 1fr;column-gap:40px;align-items:start;background:var(--p-soft);border-color:#DCD3FA}.proj .card:nth-child(6) .kicker{background:#fff;justify-self:start}.proj .card:nth-child(6)>*:not(.steps):not(.links){grid-column:1}.proj .card:nth-child(6) .steps,.proj .card:nth-child(6) .links{grid-column:2}.proj .card:nth-child(6) .steps{grid-row:1/4}
+.stats{margin-bottom:24px}
+@media(max-width:860px){.proj .card:nth-child(6){display:flex}.proj{grid-template-columns:1fr}.proj .card,.proj .card:nth-child(1),.proj .card:nth-child(2){grid-column:auto}.loop::before{display:none}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat{border-bottom:1px solid var(--line)}.hero::before{display:none}.sample{padding-left:24px}.sample .ico{position:static;margin-bottom:12px}}
+.logo::after{background:var(--p)}
+
+/* responsive (final) */
+.proj .card .kicker{max-width:calc(100% - 64px);white-space:normal;line-height:1.35}
+img{max-width:100%}
+@media(max-width:1024px){
+ .loop{grid-template-columns:repeat(3,1fr)}.loop::before{display:none}
+ .proj{grid-template-columns:repeat(2,1fr)}
+ .proj .card,.proj .card:nth-child(1),.proj .card:nth-child(2){grid-column:span 1}
+ .proj .card:nth-child(6){grid-column:span 2}
+ .hero{gap:32px}
+}
+@media(max-width:760px){
+ .wrap{padding:0 18px}
+ nav ul{display:none}nav .btn{height:38px;padding:0 14px;font-size:14px}
+ .hero{grid-template-columns:1fr;padding:36px 0 24px;gap:28px}
+ .hero::before{display:none}
+ h1{font-size:44px}
+ .lead{font-size:16px}
+ .photo{max-width:320px;margin:0 auto}
+ .badge{left:8px}
+ .stats{grid-template-columns:1fr 1fr}
+ .stat{padding:16px;border-right:0;border-bottom:1px solid var(--line)}
+ .stat:nth-child(odd){border-right:1px solid var(--line)}
+ .stat:nth-last-child(-n+2){border-bottom:0}
+ section{padding:52px 0}
+ h2{font-size:30px}
+ .loop{grid-template-columns:1fr}
+ .proj{grid-template-columns:1fr}
+ .proj .card,.proj .card:nth-child(1),.proj .card:nth-child(2),.proj .card:nth-child(6){grid-column:auto}
+ .proj .card:nth-child(6){display:flex}
+ .live{top:18px;right:18px}
+ .card{padding:22px}
+ .samples,.two{grid-template-columns:1fr}
+ .sample{padding:22px}
+ .sample .ico{position:static;margin-bottom:12px}
+ .tl li{grid-template-columns:1fr;gap:2px}
+ .contact{padding:28px;margin:40px 0}
+ .contact .cta{width:100%}.contact .btn{flex:1;justify-content:center}
+}
+.feature{margin-bottom:20px;position:relative}.feature h3{font-size:28px;max-width:40ch}.two .card{margin-bottom:0}.two{row-gap:20px}.feature .steps{display:grid;grid-template-columns:1fr 1fr;column-gap:28px}.ongoing{background:var(--p-soft);border-color:#DCD3FA}.ongoing .kicker{background:#fff}
+@media(max-width:760px){.feature .steps{grid-template-columns:1fr}.feature h3{font-size:22px;padding-right:0;margin-top:32px}}
+</style></head><body>
+<nav><div class="wrap"><a class="logo" href="#top">Joyeta</a><ul><li><a href="#research">Research</a></li><li><a href="#how">How I work</a></li><li><a href="#toolkit">Skills</a></li><li><a href="#experience">Experience</a></li></ul><a class="btn dark" href="#contact">Get in touch</a></div></nav>
+<div class="wrap" id="top">
+<header class="hero">
+  <div>
+    <span class="hello"><i></i>Open to data analyst &amp; ML internships</span>
+    <h1>Data has a story. <em>I help it speak.</em></h1>
+    <p class="lead">I'm Joyeta Banerjee, a Computer Science graduate and M.Sc. researcher in ICT at KUET. My first-author IEEE paper uses machine learning and deep learning to recognise emotion from speech. I'm building strong foundations in data analysis, and I bring 2+ years of experience turning messy problems into clear results.</p>
+    <div class="cta"><a class="btn dark" href="#research">See my research</a><a class="btn light" href="#toolkit">My skills</a></div>
+  </div>
+  <div class="photo"><img src="joyeta-hero-saree.jpg" alt="Portrait of Joyeta Banerjee"><div class="badge"><b>IEEE COMPAS 2025</b>first-author paper</div></div>
+</header>
+<div class="stats">
+  <div class="stat"><b>1</b><span>first-author IEEE paper</span></div>
+  <div class="stat"><b>ML + DL</b><span>models compared in research</span></div>
+  <div class="stat"><b>M.Sc.</b><span>ICT at KUET, ongoing</span></div>
+  <div class="stat"><b>2+ yrs</b><span>project experience</span></div>
+</div>
+</div>
+</div>
+
+<section id="research"><div class="wrap">
+  <div class="eyebrow">Research</div>
+  <h2>Published work</h2>
+  <p class="sub">Peer-reviewed research where I built and evaluated machine learning models end to end.</p>
+  <div class="card feature">
+    <span class="live">Published</span>
+    <div class="kicker">IEEE COMPAS 2025 · First author</div>
+    <h3>Multi-Track Audio Fusion for Emotion Recognition Using Machine and Deep Learning Techniques</h3>
+    <p>Can a machine tell how someone feels from their voice? This paper recognises emotion from speech by combining several audio tracks and comparing classical machine learning with deep learning models.</p>
+    <ul class="steps"><li><b>Data:</b> labelled emotional speech recordings, split into training and test sets.</li><li><b>Features:</b> audio features extracted from each recording and fused across multiple tracks.</li><li><b>Models:</b> classical machine learning and deep learning approaches, compared on the same data.</li><li><b>Evaluation:</b> accuracy and per-class results to see which emotions each model handles best.</li></ul>
+    <div class="links"><a href="https://doi.org/10.1109/COMPAS67506.2025.11381614" target="_blank" rel="noopener">Read on IEEE Xplore ↗</a></div>
+  </div>
+  <div class="card ongoing">
+    <div class="kicker">M.Sc. thesis · KUET · Ongoing</div>
+    <h3>Affective computing</h3>
+    <p>My master's research continues in emotion recognition and emotion-aware systems. Details will be shared once the work is published.</p>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <div class="eyebrow">How I work</div>
+  <h2>From raw data to a clear answer.</h2>
+  <p class="sub">The same steps I followed in my research, and the ones I apply to any data problem.</p>
+  <div class="loop">
+    <div class="st"><b>01</b><h3>Question</h3><p>Define what we want to know and how we'll measure success.</p></div>
+    <div class="st"><b>02</b><h3>Clean</h3><p>Load, check and clean the data with Python and Pandas.</p></div>
+    <div class="st"><b>03</b><h3>Explore</h3><p>Look for patterns, gaps and imbalances before modelling.</p></div>
+    <div class="st"><b>04</b><h3>Model</h3><p>Try simple baselines first, then scikit-learn or Keras models.</p></div>
+    <div class="st"><b>05</b><h3>Explain</h3><p>Report results clearly, with what worked, what didn't and why.</p></div>
+  </div>
+</div></section>
+
+<section id="toolkit"><div class="wrap">
+  <div class="eyebrow">Skills</div>
+  <h2>What I work with</h2>
+  <p class="sub">Honest levels: working knowledge from my research, and foundations I'm actively strengthening.</p>
+  <div class="two">
+    <div class="card"><h3>Data &amp; ML · working knowledge</h3><div class="chips"><span>Python</span><span>Pandas</span><span>NumPy</span><span>scikit-learn</span><span>TensorFlow / Keras</span><span>Audio feature extraction</span><span>Model evaluation</span></div></div>
+    <div class="card"><h3>Analytics · basic, growing</h3><div class="chips"><span>Excel</span><span>SQL</span><span>Power BI</span><span>Data cleaning</span><span>Visualisation</span><span>Reporting</span></div></div>
+    <div class="card"><h3>Research</h3><div class="chips"><span>Literature review</span><span>Experiment design</span><span>Academic writing</span><span>Affective computing</span></div></div>
+    <div class="card"><h3>Professional</h3><div class="chips"><span>Project management</span><span>Agile / Scrum</span><span>Requirement gathering</span><span>Stakeholder communication</span><span>ClickUp · Notion</span></div></div>
+  </div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <div class="eyebrow">Experience</div>
+  <h2>Where I've worked</h2>
+  <ul class="tl">
+    <li><span class="when">10/2024 – Present</span><div><b>Project Manager · Creatibuzz LLC</b><p>End-to-end delivery of UI/UX, frontend and backend projects with Agile and Scrum: PRDs, sprint planning, QA and client reporting.</p></div></li>
+    <li><span class="when">09/2024 – 02/2026</span><div><b>Technical Project Coordinator · Akij iBOS</b><p>Full-lifecycle enterprise ERP projects: technical bidding, market research, requirements and documentation.</p></div></li>
+    <li><span class="when">12/2024 – 02/2025</span><div><b>Technical Content Writer · Fileion</b><p>User guides, FAQs and knowledge-base articles written with designers and developers.</p></div></li>
+    <li><span class="when">09/2024 – 11/2024</span><div><b>Education Project Manager · ishQool</b><p>Coordinated content, design and tech for feature rollouts on an education platform.</p></div></li>
+        <li><span class="when">2019 – Present</span><div><b>B.Sc. in CSE (NUBT Khulna) · M.Sc. in ICT (KUET, ongoing)</b><p>CGPA 3.63 (B.Sc.) · 3.50 (M.Sc.). First author, IEEE COMPAS 2025.</p></div></li>
+  </ul>
+</div></section>
+
+<div class="wrap" id="contact">
+  <div class="contact"><div><h2>Let's find what your data is saying.</h2><p>Open to data analyst and machine learning internships and junior roles.</p></div>
+  <div class="cta"><a class="btn y" href="mailto:banerjeejoyee3@gmail.com">banerjeejoyee3@gmail.com</a><a class="btn light" href="https://www.linkedin.com/in/joyeta-banerjee" target="_blank" rel="noopener">LinkedIn</a></div></div>
+  <footer>© 2026 Joyeta Banerjee · Khulna, Bangladesh · <a href="https://joyeta-portfolio.vercel.app/">Design portfolio</a></footer>
+</div>
+</body></html>
