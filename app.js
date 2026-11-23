@@ -22,7 +22,7 @@ const P = [
     tags: ['Fintech', 'Mobile app', 'Trust & safety', 'Accessibility', 'Prototype'],
     facts: [['Role', 'Product Designer'], ['Platform', 'iOS & Android'], ['Type', 'Concept project'], ['Tools', 'Figma, FigJam']],
     caps: ['Overview', 'Problem & solution', 'Research & persona', '12 banking problems → solutions', '5 ideas other bank apps don’t have', 'User flow', 'Final UI · 12 screens', 'Decisions & trade-offs', 'Card collection', 'Design system & metrics'],
-    alts: ['Shonchoy cover with dark amount, home and confirm screens and floating trust chips', 'Problem, how-might-we and solution cards', 'Three research insights and the persona Arif Hossain', 'Table of twelve banking app problems, what happens, the design solution and the screen', 'Scam-call pause, Safe Send undo, amount in words, trusted person and money-status-first ideas', 'Send money flow with failure, retry, help and ticket path', 'Twelve final dark app screens from login to safety settings', 'Six design decisions such as hold to send and a hidden balance', 'Midnight, Nakshi, Glass and Monsoon card designs', 'Colour variables, components, success metrics, accessibility and next steps']
+    alts: ['Shonchoy cover with light amount, home and confirm screens and floating trust chips', 'Problem, how-might-we and solution cards', 'Three research insights and the persona Arif Hossain', 'Table of twelve banking app problems, what happens, the design solution and the screen', 'Scam-call pause, Safe Send undo, amount in words, trusted person and money-status-first ideas', 'Send money flow with failure, retry, help and ticket path', 'Twelve final light app screens from login to safety settings', 'Six design decisions such as hold to send and a hidden balance', 'Midnight, Nakshi, Glass and Monsoon card designs', 'Colour variables, components, success metrics, accessibility and next steps']
   },
   {
     id: 'moodbrew', n: '01', title: 'MoodBrew',
@@ -82,7 +82,7 @@ function protoSection(p) {
       ${'</div>'}</div>
       <button class="pv-arrow" type="button" data-step="1" aria-label="Next screen">›</button></div>
       <aside class="pv-side">
-        ${d.themes ? '<div class="pv-theme" role="group" aria-label="App theme"><button type="button" data-theme="dark" aria-pressed="true">Dark</button><button type="button" data-theme="light" aria-pressed="false">Light</button></div>' : ''}<div class="pv-now"></div><p class="pv-scrolltip" hidden>↕ Scroll inside the phone to see more</p>
+        ${d.themes ? '<div class="pv-theme" role="group" aria-label="App theme"><button type="button" data-theme="light" aria-pressed="true">Light</button><button type="button" data-theme="dark" aria-pressed="false">Dark</button></div>' : ''}<div class="pv-now"></div><p class="pv-scrolltip" hidden>↕ Scroll inside the phone to see more</p>
         <ol class="pv-list">${d.screens.map((s, i) => `<li><button type="button" data-go="${i}"><b>${String(i + 1).padStart(2, '0')}</b>${s.name.replace(/^\d+ · /, '')}</button></li>`).join('')}</ol>
         <div class="pv-ctrls"><button type="button" data-prev>← Previous</button><span class="count"></span><button type="button" data-step="1">Next →</button><button type="button" data-go="0">Restart</button></div>
         <label class="pv-toggle"><input type="checkbox" data-hs> Show clickable areas</label>
@@ -144,7 +144,7 @@ function protoGo(id, i, back) {
   const s = d.screens[i];
   const img = root.querySelector('.pv-inner img');
   img.style.animation = 'none'; img.offsetHeight; img.style.animation = '';
-  img.src = root.dataset.mode === 'light' ? s.img.replace(/-(\d+)\.jpg$/, '-light-$1.jpg').replace(/\/(\w+)-light-/, '/$1-light-') : s.img; img.alt = s.name; img.style.aspectRatio = (1 / s.ar).toFixed(4);
+  img.src = (root.dataset.mode || (d.themes ? 'light' : '')) === 'light' ? s.img.replace(/-(\d+)\.jpg$/, '-light-$1.jpg').replace(/\/(\w+)-light-/, '/$1-light-') : s.img; img.alt = s.name; img.style.aspectRatio = (1 / s.ar).toFixed(4);
   const scr = root.querySelector('.pv-screen'); if (scr) { scr.classList.toggle('scrolly', !!s.scroll); scr.scrollTop = 0; }
   const tip = root.querySelector('.pv-scrolltip'); if (tip) tip.hidden = !s.scroll;
   root.querySelector('.hs-layer').innerHTML = s.hs.map(h => `<button class="pv-hs" type="button" data-to="${h.to}" aria-label="${h.n}: go to ${d.screens[h.to].name}" style="left:${h.l}%;top:${h.t}%;width:${h.w}%;height:${h.h}%"></button>`).join('');
