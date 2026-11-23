@@ -82,7 +82,7 @@ function protoSection(p) {
       ${'</div>'}</div>
       <button class="pv-arrow" type="button" data-step="1" aria-label="Next screen">›</button></div>
       <aside class="pv-side">
-        <div class="pv-now"></div><p class="pv-scrolltip" hidden>↕ Scroll inside the phone to see more</p>
+        ${d.themes ? '<div class="pv-theme" role="group" aria-label="App theme"><button type="button" data-theme="dark" aria-pressed="true">Dark</button><button type="button" data-theme="light" aria-pressed="false">Light</button></div>' : ''}<div class="pv-now"></div><p class="pv-scrolltip" hidden>↕ Scroll inside the phone to see more</p>
         <ol class="pv-list">${d.screens.map((s, i) => `<li><button type="button" data-go="${i}"><b>${String(i + 1).padStart(2, '0')}</b>${s.name.replace(/^\d+ · /, '')}</button></li>`).join('')}</ol>
         <div class="pv-ctrls"><button type="button" data-prev>← Previous</button><span class="count"></span><button type="button" data-step="1">Next →</button><button type="button" data-go="0">Restart</button></div>
         <label class="pv-toggle"><input type="checkbox" data-hs> Show clickable areas</label>
@@ -144,7 +144,7 @@ function protoGo(id, i, back) {
   const s = d.screens[i];
   const img = root.querySelector('.pv-inner img');
   img.style.animation = 'none'; img.offsetHeight; img.style.animation = '';
-  img.src = s.img; img.alt = s.name; img.style.aspectRatio = (1 / s.ar).toFixed(4);
+  img.src = root.dataset.mode === 'light' ? s.img.replace(/-(\d+)\.jpg$/, '-light-$1.jpg').replace(/\/(\w+)-light-/, '/$1-light-') : s.img; img.alt = s.name; img.style.aspectRatio = (1 / s.ar).toFixed(4);
   const scr = root.querySelector('.pv-screen'); if (scr) { scr.classList.toggle('scrolly', !!s.scroll); scr.scrollTop = 0; }
   const tip = root.querySelector('.pv-scrolltip'); if (tip) tip.hidden = !s.scroll;
   root.querySelector('.hs-layer').innerHTML = s.hs.map(h => `<button class="pv-hs" type="button" data-to="${h.to}" aria-label="${h.n}: go to ${d.screens[h.to].name}" style="left:${h.l}%;top:${h.t}%;width:${h.w}%;height:${h.h}%"></button>`).join('');
@@ -158,6 +158,7 @@ function protoBack(id) { const h = PHIST[id] || []; if (h.length) protoGo(id, h.
 document.querySelectorAll('[data-proto]').forEach(root => {
   const id = root.dataset.proto;
   root.addEventListener('click', e => {
+    const th = e.target.closest('.pv-theme button'); if (th) { root.dataset.mode = th.dataset.theme; root.querySelectorAll('.pv-theme button').forEach(b => b.setAttribute('aria-pressed', b === th ? 'true' : 'false')); protoGo(id, PSTATE[id] || 0, true); return; }
     const hs = e.target.closest('.pv-hs'); if (hs) { protoGo(id, +hs.dataset.to); return; }
     if (e.target.closest('[data-prev]')) { protoBack(id); return; }
     const g = e.target.closest('[data-go]'); if (g) { if (+g.dataset.go === 0) PHIST[id] = []; protoGo(id, +g.dataset.go); return; }

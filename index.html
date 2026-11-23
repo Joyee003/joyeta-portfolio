@@ -1331,6 +1331,30 @@ body.v10 .case-tags{display:flex;flex-wrap:wrap;gap:6px;position:relative;z-inde
 body.v10 .case-hero .tag{padding:6px 11px}
 body.v10 .pc ul,body.v10 .pc.dark ul{border:0!important}
 body.v10 .pc li,body.v10 .pc.dark li{border:0!important;border-top:1px dashed #E0E0E0!important;border-radius:0!important;background:none!important}
+/* v23: light prototype panel + case-coloured next band */
+body.v10 .pv{background:var(--case-soft,#F6F6F6);color:#171717;border:1px solid color-mix(in srgb,var(--case,#171717) 12%,#E9E9E9)}
+body.v10 .pv .tag{color:var(--case)}
+body.v10 .pv-head h2,body.v10 .pv-now{color:#171717}
+body.v10 .pv-phone .pv-device{background:#111;box-shadow:0 0 0 1px #2a2a30,0 30px 60px -28px rgba(16,16,16,.45)}
+body.v10 .pv-desktop .pv-device{box-shadow:0 0 0 1px #d9d9d9,0 30px 60px -28px rgba(16,16,16,.35)}
+body.v10 .pv-list button{background:#fff;border:1px solid #E9E9E9;color:#5F5F5F;box-shadow:0 1px 2px rgb(16 16 16/.04)}
+body.v10 .pv-list button:hover{border-color:color-mix(in srgb,var(--case) 35%,#E9E9E9);color:#171717}
+body.v10 .pv-list button[aria-current="true"]{background:var(--case);border-color:var(--case);color:#fff}
+body.v10 .pv-list button[aria-current="true"] b{opacity:.8}
+body.v10 .pv-ctrls button,body.v10 .pv-theme button{background:#fff;border:1px solid #E0E0E0;color:#171717}
+body.v10 .pv-ctrls button:disabled{opacity:.4}
+body.v10 .pv-ctrls .count{color:#8E8E8E}
+body.v10 .pv-arrow{background:#fff;border:1px solid #E0E0E0;color:#171717;box-shadow:0 1px 2px rgb(16 16 16/.05)}
+body.v10 .pv-arrow:disabled{opacity:.35}
+body.v10 .pv-toggle{color:#5F5F5F}
+body.v10 .pv-toggle input{accent-color:var(--case)}
+body.v10 .pv-scrolltip{color:var(--case)}
+.pv-theme{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:#fff;border:1px solid #E9E9E9;margin:0 0 14px}
+body.v10 .pv-theme button{border:0;border-radius:999px;padding:7px 14px;font:600 13px var(--body);cursor:pointer;background:transparent;color:#5F5F5F}
+body.v10 .pv-theme button[aria-pressed="true"]{background:var(--case);color:#fff}
+body.v10 .next-case{background:var(--case,#151515);border-color:transparent}
+body.v10 .next-case .tag{color:rgba(255,255,255,.7)!important}
+body.v10 .next-case a{color:#fff}
 </style>
 </head>
 <body class="v10">
