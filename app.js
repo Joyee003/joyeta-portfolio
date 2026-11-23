@@ -34,19 +34,18 @@ const P = [
   }
 ];
 const MORE = {
-  id: 'pathshala', n: '05', title: 'Pathshala',
-  line: 'UI showcase: a bilingual learning app for Class 6–10 students, built on my ishQool project experience.',
-  tags: ['EdTech', 'Mobile app', 'Bangla + English'],
-  facts: [['Role', 'Product Designer'], ['Platform', 'Android-first'], ['Type', 'UI showcase'], ['Tools', 'Figma']],
-  caps: ['Overview', 'Problem & solution', 'Who it’s for', 'Final UI · learning loop', 'Design system & metrics'],
-  alts: ['Pathshala cover with three app screens', 'Problem, how-might-we and solution cards', 'Students, parents and low-data users', 'Home, lesson player, practice and progress screens', 'Colour variables, components and metrics']
+  id: 'rovea', n: '05', title: 'ROVEA',
+  line: 'Find your kind of escape. A brand and responsive web app that turns “let’s go somewhere” into a realistic 24, 48 or 72-hour plan, matched to your time, budget and mood.',
+  tags: ['Brand identity', 'Responsive web app', 'Travel', 'Design system', 'Research synthesis'],
+  facts: [['Role', 'Brand & Product Designer'], ['Platform', 'Responsive web app'], ['Type', 'Concept project'], ['Tools', 'Figma']],
+  caps: ['Brand cover', 'Logo system', 'Visual identity system', 'Brand applications', 'Shree’s story & the problem', 'Research & key insights', 'User journey & experience strategy', 'Design system', 'Travel discovery homepage', 'Personalised discovery', 'Destination details · Kyoto', '48–72 hour itinerary builder', 'My Trips dashboard'],
+  alts: ['ROVEA cover: Find your kind of escape, with a lake photo and a ready-plan card', 'Logo system with stacked, horizontal and dark lockups, app marks at 48 to 16px and construction', 'Arctic blue, citrus lime and navy palette, Manrope and DM Sans type scale, buttons, filters and inputs', 'Poster, social posts, app preview, escape pass and promotional banner', 'Persona Shree, 25, a normal week and how planning feels today', 'User needs, pain points, design opportunities and insight-to-screen mapping', 'Six-stage journey with an emotion curve, with ROVEA versus planning today', 'Design system: logos, icons, buttons, inputs, cards, navigation and the escape planner', 'Homepage with hero, escape planner, featured escapes and curated plans', 'Personalised results with filters, why-it-fits reasons and a comparison table', 'Kyoto destination page with experiences, places, food and a suggested plan', 'Editable day-by-day itinerary with walking times, map and budget', 'My Trips dashboard with upcoming trip, budget, documents and saved places']
 };
 const FP = {
   moodbrew: { node: '118-930', page: '2-2', d: 'phone', hint: 'Start: Get started → mood check-in → preferences → recommendation → checkout → feedback' },
   shuddhi: { node: '72-1489', page: '61-1033', d: 'web', hint: 'Start: Take the skin quiz → Next → Add routine → Checkout → Place order → View my routine' },
   nexa: { node: '21-434', page: '2-4', d: 'web', hint: 'Use “All modules” in the sidebar to switch between CRM, ERP, HRM, Payroll, Accounting and POS' },
-  shonchoy: { node: '131-758', page: '2-5', d: 'phone', hint: 'Start: Touch to unlock → Send → Continue → Review → Hold to send · try More, the bell and History too' },
-  pathshala: { node: '31-189', page: '2-6', d: 'phone', hint: 'Start: Continue lesson → Practice → Next question' }
+  shonchoy: { node: '131-758', page: '2-5', d: 'phone', hint: 'Start: Touch to unlock → Send → Continue → Review → Hold to send · try More, the bell and History too' }
 };
 const protoUrl = (id, embed) => {
   const p = FP[id]; const q = `node-id=${p.node}&starting-point-node-id=${p.node}&page-id=${p.page}&scaling=${p.d === 'phone' ? 'scale-down' : 'scale-down-width'}&content-scaling=fixed`;
@@ -63,7 +62,7 @@ const card = (p, k) => `
     <p>${p.line}</p>
     <span class="c10-meta"><span><small>Role</small><span>${p.facts[0][1]}</span></span><span><small>Platform</small><span>${p.facts[1][1]}</span></span></span>
     <span class="c10-tags">${p.tags.slice(1, 4).map(t => `<span>${t}</span>`).join('')}</span>
-    <span class="c10-go"><span>Case study + live prototype</span><i>→</i></span>
+    <span class="c10-go"><span>${FP[p.id] ? 'Case study + live prototype' : 'Brand + product case study'}</span><i>→</i></span>
   </span>
 </a>`;
 document.getElementById('projects').innerHTML = ALL.map((p, k) => card(p, k)).join('');
@@ -98,9 +97,9 @@ layer.innerHTML = ALL.map((p, k) => {
   return `<article class="case" id="case-${p.id}" aria-label="${p.title} case study">
   <div class="case-bar"><div class="wrap"><span class="crumbs">Case study ${p.n} / 05 · ${p.title}</span><a class="btn ghost" href="#work">✕ Close</a></div></div>
   <div class="wrap">
-    <div class="case-hero"><span class="tag">${p.tags.join(' · ')}</span><h1>${p.title}</h1><p class="lede">${p.line}</p>
+    <div class="case-hero"><div class="case-tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div><h1>${p.title}</h1><p class="lede">${p.line}</p>
       <dl class="facts">${p.facts.map(f => `<div><dt>${f[0]}</dt><dd>${f[1]}</dd></div>`).join('')}</dl>
-      <div class="case-actions"><a class="btn" href="#proto-${p.id}" data-jump="proto-${p.id}">▶ Try the prototype</a><a class="btn ghost" href="${protoUrl(p.id)}" target="_blank" rel="noopener">Open in Figma prototype ↗</a><a class="btn ghost" href="#contact">Talk about this project</a></div>
+      <div class="case-actions">${FP[p.id] ? `<a class="btn" href="#proto-${p.id}" data-jump="proto-${p.id}">▶ Try the prototype</a><a class="btn ghost" href="${protoUrl(p.id)}" target="_blank" rel="noopener">Open in Figma prototype ↗</a>` : `<a class="btn" href="${FIGMA}?node-id=203-2062" target="_blank" rel="noopener">Open in Figma ↗</a>`}<a class="btn ghost" href="#contact">Talk about this project</a></div>
     </div>
     ${protoSection(p)}
     <div class="case-figs">${p.caps.map((c, i) => `<figure><figcaption>${String(i + 1).padStart(2, '0')} · ${c}</figcaption><div class="fig-frame"><img src="${img(p, i)}" alt="${p.alts[i]}" loading="lazy"></div></figure>`).join('')}</div>

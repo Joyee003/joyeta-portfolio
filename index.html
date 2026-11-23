@@ -1290,6 +1290,47 @@ body.v10 .tz-chip{border-radius:12px;background:var(--surface);border:1px solid 
 body.v10 .tz-chip.home{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 body.v10 .tz-chip.home span{color:var(--accent-deep)}
 body.v10 .ct10-mail .b10.accent{background:var(--gloss)!important;color:#fff!important}
+
+/* ===== v22: per-case colour themes (Marcel base + Rico05 clarity) ===== */
+#case-moodbrew{--case:#14523A;--case-2:#C8A27A;--case-soft:#EAF2EE}
+#case-shuddhi{--case:#7A2E3A;--case-2:#D9A5A0;--case-soft:#F7EDEE}
+#case-nexa{--case:#0F766E;--case-2:#7C4DFF;--case-soft:#E5F2F0}
+#case-shonchoy{--case:#4B3FBF;--case-2:#36B37E;--case-soft:#EEEDFB}
+#case-rovea{--case:#142C3D;--case-2:#D5F36A;--case-soft:#E4F2F6}
+body.v10 .case{background:#F6F6F6}
+body.v10 .case-bar .crumbs{font-family:var(--body);font-weight:500;color:var(--muted2)}
+body.v10 .case-bar .crumbs::before{content:"";display:inline-block;width:8px;height:8px;border-radius:3px;background:var(--case);margin-right:8px;vertical-align:1px}
+body.v10 .case-hero{position:relative;margin-top:28px;padding:clamp(28px,4vw,56px);border-radius:28px;background:var(--case-soft);border:1px solid color-mix(in srgb,var(--case) 14%,transparent);overflow:hidden}
+body.v10 .case-hero::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:var(--case-2);opacity:.35;filter:blur(40px);pointer-events:none}
+body.v10 .case-hero h1{color:var(--case);margin:16px 0 14px}
+body.v10 .case-hero .tag{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--case)!important;border:1px solid color-mix(in srgb,var(--case) 18%,transparent);border-radius:999px;padding:6px 12px;font:500 13px/1 var(--body)!important}
+body.v10 .case-hero .lede{color:var(--ink-d);font-size:18px;line-height:1.6}
+body.v10 .case .facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--sh-xs);margin-top:28px;overflow:hidden}
+body.v10 .case .facts>div{padding:16px 20px;border-left:1px solid var(--line)}
+body.v10 .case .facts>div:first-child{border-left:0}
+body.v10 .case .facts dt{font:500 12px/1.2 var(--body);letter-spacing:.04em;text-transform:uppercase;color:var(--muted2)}
+body.v10 .case .facts dd{margin:6px 0 0;font:600 15px/1.35 var(--body);color:var(--ink)}
+body.v10 .case .btn:not(.ghost){background:linear-gradient(180deg,color-mix(in srgb,var(--case) 82%,#fff),var(--case))!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 0 0 1px color-mix(in srgb,var(--case) 80%,#000),0 8px 18px -8px color-mix(in srgb,var(--case) 60%,transparent)!important}
+body.v10 .case-figs{gap:40px;padding-top:40px}
+body.v10 .case-figs figcaption{display:inline-flex;align-self:flex-start;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font:600 13px/1 var(--body)!important;letter-spacing:0!important;text-transform:none!important;color:var(--ink)!important;box-shadow:var(--sh-xs)}
+body.v10 .case-figs figcaption::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--case);box-shadow:0 0 0 3px var(--case-soft)}
+body.v10 .case-figs .fig-frame{background:var(--case-soft)!important;border:1px solid color-mix(in srgb,var(--case) 10%,var(--line))!important;border-radius:24px!important;padding:clamp(8px,1.6vw,18px)!important;box-shadow:var(--sh-xs)!important}
+body.v10 .case-figs img{border-radius:14px;border:0;box-shadow:0 1px 2px rgb(16 16 16/.06),0 12px 28px -18px rgb(16 16 16/.25)}
+body.v10 .next-case{margin:24px 0 64px;padding:28px 32px;border-radius:24px;background:#151515;border:1px solid #252525;display:flex;justify-content:space-between;align-items:center;gap:16px}
+body.v10 .next-case .tag{color:#737373!important;font:500 12px/1 var(--body)!important;letter-spacing:.04em!important;text-transform:uppercase}
+body.v10 .next-case a{color:#EDEDED;font:600 clamp(22px,3vw,32px)/1.1 var(--body);letter-spacing:-.02em;text-decoration:none}
+body.v10 .next-case a:hover{color:#fff}
+/* home cards: tinted image wells per case */
+body.v10 .c10[href="#case-moodbrew"] .c10-img{background:#EAF2EE}
+body.v10 .c10[href="#case-shuddhi"] .c10-img{background:#F7EDEE}
+body.v10 .c10[href="#case-nexa"] .c10-img{background:#E5F2F0}
+body.v10 .c10[href="#case-shonchoy"] .c10-img{background:#EEEDFB}
+body.v10 .c10[href="#case-rovea"] .c10-img{background:#E4F2F6}
+@media (max-width:760px){body.v10 .case .facts{grid-template-columns:1fr 1fr}body.v10 .case .facts>div:nth-child(3){border-left:0}body.v10 .case .facts>div:nth-child(n+3){border-top:1px solid var(--line)}body.v10 .case-hero{border-radius:20px}body.v10 .next-case{flex-direction:column;align-items:flex-start}}
+body.v10 .case-tags{display:flex;flex-wrap:wrap;gap:6px;position:relative;z-index:1}
+body.v10 .case-hero .tag{padding:6px 11px}
+body.v10 .pc ul,body.v10 .pc.dark ul{border:0!important}
+body.v10 .pc li,body.v10 .pc.dark li{border:0!important;border-top:1px dashed #E0E0E0!important;border-radius:0!important;background:none!important}
 </style>
 </head>
 <body class="v10">
