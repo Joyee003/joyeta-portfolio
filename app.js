@@ -49,9 +49,10 @@ const MORE2 = {
   line: 'A bilingual learning app for Class 6–10 students: a 20-minute daily plan, short Bangla lessons, practice that explains, offline downloads and a weekly report parents can open on WhatsApp.',
   tags: ['EdTech', 'Mobile app', 'Bilingual UX', 'Low-data design', 'Habit building'],
   facts: [['Role', 'Product Designer'], ['Platform', 'Android-first mobile app'], ['Type', 'UI showcase'], ['Tools', 'Figma']],
-  caps: ['Overview', 'Problem & solution', 'Who it’s for', 'Final UI · one learning loop', 'More screens · offline, doubts, parents, class', 'Design system & metrics'],
+  caps: ['Overview', 'Problem & solution', 'Who it’s for', 'Final UI · 8 screens, one learning day', 'Design system & metrics'],
+  imgs: ['assets/pathshala-00.jpg', 'assets/pathshala-01.jpg', 'assets/pathshala-02.jpg', 'assets/pathshala-04.jpg', 'assets/pathshala-03.jpg'],
   figma: '2-6',
-  alts: ['Pathshala cover with lesson player, home and practice screens on indigo', 'Problem, how-might-we and solution cards', 'Three user groups: students, parents and low-data users', 'Four screens: home plan, lesson player, practice and progress', 'Four new screens: offline downloads, ask a teacher, parent weekly report and class challenge', 'Colour variables, components and four success metrics']
+  alts: ['Pathshala cover with lesson player, home and practice screens on indigo', 'Problem, how-might-we and solution cards', 'Three user groups: students, parents and low-data users', 'Eight screens: home plan, lesson player, practice, progress, offline downloads, ask a teacher, parent report and class challenge', 'Colour variables, components and four success metrics']
 };
 const MORE3 = {
   id: 'sentry', n: '06', title: 'SENTRY AI',
@@ -67,13 +68,14 @@ const FP = {
   moodbrew: { node: '118-930', page: '2-2', d: 'phone', hint: 'Start: Get started → mood check-in → preferences → recommendation → checkout → feedback' },
   shuddhi: { node: '72-1489', page: '61-1033', d: 'web', hint: 'Start: Take the skin quiz → Next → Add routine → Checkout → Place order → View my routine' },
   nexa: { node: '21-434', page: '2-4', d: 'web', hint: 'Use “All modules” in the sidebar to switch between CRM, ERP, HRM, Payroll, Accounting and POS' },
+  pathshala: { node: '31-189', page: '2-6', d: 'phone', hint: 'Start: Continue lesson → Practice → Next → Progress · then Downloads, Ask a teacher, Parent report and Class challenge' },
   shonchoy: { node: '131-758', page: '2-5', d: 'phone', hint: 'Start: Touch to unlock → Send → Continue → Review → Hold to send · try More, the bell and History too' }
 };
 const protoUrl = (id, embed) => {
   const p = FP[id]; const q = `node-id=${p.node}&starting-point-node-id=${p.node}&page-id=${p.page}&scaling=${p.d === 'phone' ? 'scale-down' : 'scale-down-width'}&content-scaling=fixed`;
   return embed ? `https://embed.figma.com/proto/5BtLWG4gRtr6r6JCMc1cQw/Portfolio?${q}&hide-ui=1&embed-host=joyeta-portfolio` : `https://www.figma.com/proto/5BtLWG4gRtr6r6JCMc1cQw/Portfolio?${q}`;
 };
-const ORDER = ['sentry', 'rovea', 'shonchoy', 'shuddhi', 'nexa', 'moodbrew', 'pathshala'];
+const ORDER = ['rovea', 'shonchoy', 'shuddhi', 'nexa', 'moodbrew', 'pathshala', 'sentry'];
 const ALL = ORDER.map(id => [...P, MORE, MORE2, MORE3].find(p => p.id === id));
 ALL.forEach((p, k) => p.n = String(k + 1).padStart(2, '0'));
 const img = (p, i) => (p.imgs && p.imgs[i]) || `assets/${p.id}-${String(i).padStart(2, '0')}.jpg`;
