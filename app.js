@@ -44,6 +44,15 @@ const MORE = {
   caps: ['Brand cover', 'Logo system', 'Visual identity system', 'Brand applications', 'Shree’s story & the problem', 'Research & key insights', 'User journey & experience strategy', 'Design system', 'Travel discovery homepage', 'Personalised discovery', 'Destination details · Kyoto', '48–72 hour itinerary builder', 'My Trips dashboard'],
   alts: ['ROVEA cover: Find your kind of escape, with a lake photo and a ready-plan card', 'Logo system with stacked, horizontal and dark lockups, app marks at 48 to 16px and construction', 'Arctic blue, citrus lime and navy palette, Manrope and DM Sans type scale, buttons, filters and inputs', 'Poster, social posts, app preview, escape pass and promotional banner', 'Persona Shree, 25, a normal week and how planning feels today', 'User needs, pain points, design opportunities and insight-to-screen mapping', 'Six-stage journey with an emotion curve, with ROVEA versus planning today', 'Design system: logos, icons, buttons, inputs, cards, navigation and the escape planner', 'Homepage with hero, escape planner, featured escapes and curated plans', 'Personalised results with filters, why-it-fits reasons and a comparison table', 'Kyoto destination page with experiences, places, food and a suggested plan', 'Editable day-by-day itinerary with walking times, map and budget', 'My Trips dashboard with upcoming trip, budget, documents and saved places']
 };
+const MORE2 = {
+  id: 'pathshala', n: '06', title: 'Pathshala',
+  line: 'A bilingual learning app for Class 6–10 students: a 20-minute daily plan, short Bangla lessons, practice that explains, offline downloads and a weekly report parents can open on WhatsApp.',
+  tags: ['EdTech', 'Mobile app', 'Bilingual UX', 'Low-data design', 'Habit building'],
+  facts: [['Role', 'Product Designer'], ['Platform', 'Android-first mobile app'], ['Type', 'UI showcase'], ['Tools', 'Figma']],
+  caps: ['Overview', 'Problem & solution', 'Who it’s for', 'Final UI · one learning loop', 'More screens · offline, doubts, parents, class', 'Design system & metrics'],
+  figma: '2-6',
+  alts: ['Pathshala cover with lesson player, home and practice screens on indigo', 'Problem, how-might-we and solution cards', 'Three user groups: students, parents and low-data users', 'Four screens: home plan, lesson player, practice and progress', 'Four new screens: offline downloads, ask a teacher, parent weekly report and class challenge', 'Colour variables, components and four success metrics']
+};
 const FP = {
   moodbrew: { node: '118-930', page: '2-2', d: 'phone', hint: 'Start: Get started → mood check-in → preferences → recommendation → checkout → feedback' },
   shuddhi: { node: '72-1489', page: '61-1033', d: 'web', hint: 'Start: Take the skin quiz → Next → Add routine → Checkout → Place order → View my routine' },
@@ -54,8 +63,8 @@ const protoUrl = (id, embed) => {
   const p = FP[id]; const q = `node-id=${p.node}&starting-point-node-id=${p.node}&page-id=${p.page}&scaling=${p.d === 'phone' ? 'scale-down' : 'scale-down-width'}&content-scaling=fixed`;
   return embed ? `https://embed.figma.com/proto/5BtLWG4gRtr6r6JCMc1cQw/Portfolio?${q}&hide-ui=1&embed-host=joyeta-portfolio` : `https://www.figma.com/proto/5BtLWG4gRtr6r6JCMc1cQw/Portfolio?${q}`;
 };
-const ORDER = ['rovea', 'shonchoy', 'shuddhi', 'nexa', 'moodbrew'];
-const ALL = ORDER.map(id => [...P, MORE].find(p => p.id === id));
+const ORDER = ['rovea', 'shonchoy', 'shuddhi', 'nexa', 'moodbrew', 'pathshala'];
+const ALL = ORDER.map(id => [...P, MORE, MORE2].find(p => p.id === id));
 ALL.forEach((p, k) => p.n = String(k + 1).padStart(2, '0'));
 const img = (p, i) => (p.imgs && p.imgs[i]) || `assets/${p.id}-${String(i).padStart(2, '0')}.jpg`;
 const card = (p, k) => `
@@ -67,7 +76,7 @@ const card = (p, k) => `
     <p>${p.line}</p>
     <span class="c10-meta"><span><small>Role</small><span>${p.facts[0][1]}</span></span><span><small>Platform</small><span>${p.facts[1][1]}</span></span></span>
     <span class="c10-tags">${p.tags.slice(1, 4).map(t => `<span>${t}</span>`).join('')}</span>
-    <span class="c10-go"><span>${FP[p.id] ? 'Case study + live prototype' : 'Brand + product case study'}</span><i>→</i></span>
+    <span class="c10-go"><span>${FP[p.id] ? 'Case study + live prototype' : p.id === 'rovea' ? 'Brand + product case study' : 'UI case study'}</span><i>→</i></span>
   </span>
 </a>`;
 document.getElementById('projects').innerHTML = ALL.map((p, k) => card(p, k)).join('');
@@ -100,11 +109,11 @@ const layer = document.getElementById('caseLayer');
 layer.innerHTML = ALL.map((p, k) => {
   const nxt = ALL[(k + 1) % ALL.length];
   return `<article class="case" id="case-${p.id}" aria-label="${p.title} case study">
-  <div class="case-bar"><div class="wrap"><span class="crumbs">Case study ${p.n} / 05 · ${p.title}</span><a class="btn ghost" href="#work">✕ Close</a></div></div>
+  <div class="case-bar"><div class="wrap"><span class="crumbs">Case study ${p.n} / ${String(ALL.length).padStart(2, '0')} · ${p.title}</span><a class="btn ghost" href="#work">✕ Close</a></div></div>
   <div class="wrap">
     <div class="case-hero"><div class="case-tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div><h1>${p.title}</h1><p class="lede">${p.line}</p>
       <dl class="facts">${p.facts.map(f => `<div><dt>${f[0]}</dt><dd>${f[1]}</dd></div>`).join('')}</dl>
-      <div class="case-actions">${FP[p.id] ? `<a class="btn" href="#proto-${p.id}" data-jump="proto-${p.id}">▶ Try the prototype</a><a class="btn ghost" href="${protoUrl(p.id)}" target="_blank" rel="noopener">Open in Figma prototype ↗</a>` : `<a class="btn" href="${FIGMA}?node-id=203-2062" target="_blank" rel="noopener">Open in Figma ↗</a>`}<a class="btn ghost" href="#contact">Talk about this project</a></div>
+      <div class="case-actions">${FP[p.id] ? `<a class="btn" href="#proto-${p.id}" data-jump="proto-${p.id}">▶ Try the prototype</a><a class="btn ghost" href="${protoUrl(p.id)}" target="_blank" rel="noopener">Open in Figma prototype ↗</a>` : `<a class="btn" href="${FIGMA}?node-id=${p.figma || '203-2062'}" target="_blank" rel="noopener">Open in Figma ↗</a>`}<a class="btn ghost" href="#contact">Talk about this project</a></div>
     </div>
     ${protoSection(p)}
     <div class="case-figs">${p.caps.map((c, i) => `<figure><figcaption>${String(i + 1).padStart(2, '0')} · ${c}</figcaption>${p.notes && p.notes[i] ? `<p class="fig-note">${p.notes[i]}</p>` : ''}<div class="fig-frame"><img src="${img(p, i)}" alt="${p.alts[i]}" loading="lazy"></div></figure>`).join('')}</div>
